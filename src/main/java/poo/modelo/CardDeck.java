@@ -22,7 +22,7 @@ public class CardDeck {
 		for (int i = 0; i < nroCartas; i++) {
 			int n = r.nextInt(10) + 1;
 			Card c = new Card("C" + n, "img" + n, n);
-			c.flip();
+			//c.flip();
 			cartas.add(c);
 		}
 		observers = new LinkedList<>();

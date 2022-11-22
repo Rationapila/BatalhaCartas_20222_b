@@ -74,6 +74,7 @@ public class Game {
 		}
 		if (deckAcionado == deckJ1) {
 			if (player != 1) {	
+				
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
 				for (var observer : observers) {
 					observer.notify(gameEvent);
@@ -83,9 +84,11 @@ public class Game {
 				deckJ1.getSelectedCard().flip();
 				// Proximo jogador
 				nextPlayer();
+				
 			}
 		} else if (deckAcionado == deckJ2) {
 			if (player != 2) {
+				
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
 				for (var observer : observers) {
 					observer.notify(gameEvent);
@@ -123,30 +126,34 @@ public class Game {
 		}
 		
 		mesaJ1.addCard( deckJ1.getSelectedCard() );
+		//deckJ1.addCard( deckJ1.getSelectedCard() );
 		deckJ1.removeSel();
 		
 		mesaJ2.addCard( deckJ2.getSelectedCard() );
+		//deckJ2.addCard( deckJ2.getSelectedCard() );
 		deckJ2.removeSel();
 		nextPlayer();
 	}
 
 	
 	public void drawCardP1(){
-		GameEvent gameEvent = null;
 		Random r = new Random();
 			int n = r.nextInt(10) + 1;
 			Card c = new Card("C" + n, "img" + n, n);
-			c.flip();
+			//c.flip();
 			deckJ1.addCard(c);
+			//deckJ1.removeSel();
+	
 	}
 
 	public void drawCardP2(){
-		GameEvent gameEvent = null;
 		Random r = new Random();
 			int n = r.nextInt(10) + 1;
 			Card c = new Card("C" + n, "img" + n, n);
-			c.flip();
+			//c.flip();
 			deckJ2.addCard(c);
+			//deckJ2.removeSel();
+			
 	}
 	
 	
