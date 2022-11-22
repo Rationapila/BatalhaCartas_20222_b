@@ -92,9 +92,13 @@ public class GameWindow extends Application implements GameListener {
 		butClean.setOnAction(e -> Game.getInstance().removeSelected());
 
 		
-		Button butDraw = new Button("Draw");
-		grid3.add(butDraw, 2, 1);
-		butDraw.setOnAction(e -> Game.getInstance().drawCard());
+		Button butDrawP1 = new Button("Draw");
+		grid1.add(butDrawP1, 2, 1);
+		butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
+
+		Button butDrawP2 = new Button("Draw");
+		grid2.add(butDrawP2, 2, 1);
+		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
 		
 
 		DeckView mesaJ2 = new DeckView(-2);

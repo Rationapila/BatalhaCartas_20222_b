@@ -131,17 +131,22 @@ public class Game {
 	}
 
 	
-	public void drawCard(){
+	public void drawCardP1(){
 		GameEvent gameEvent = null;
 		Random r = new Random();
 			int n = r.nextInt(10) + 1;
 			Card c = new Card("C" + n, "img" + n, n);
 			c.flip();
 			deckJ1.addCard(c);
-			int d = r.nextInt(10) + 1;
-			Card e = new Card("C" + d, "img" + d, d);
+	}
+
+	public void drawCardP2(){
+		GameEvent gameEvent = null;
+		Random r = new Random();
+			int n = r.nextInt(10) + 1;
+			Card c = new Card("C" + n, "img" + n, n);
 			c.flip();
-			deckJ2.addCard(e);
+			deckJ2.addCard(c);
 	}
 	
 	
