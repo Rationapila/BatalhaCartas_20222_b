@@ -78,11 +78,29 @@ public class GameWindow extends Application implements GameListener {
 		grid3.setVgap(10);
 		grid3.setPadding(new Insets(25, 25, 25, 25));
 
+		//DeckView reservaJ1 = new DeckView(-2);
+		//ScrollPane sd
+
+		/* 
+		DeckView reservaJ1 = new DeckView(-2);
+		ScrollPane sdR1 = new ScrollPane();
+		sdR1.setPrefSize(1200, 250);
+		sdR1.setContent(reservaJ1);
+		grid3.add(sdR1, 0, 0);
+		*/
+		
 		DeckView mesaJ1 = new DeckView(-1);
 		ScrollPane sdM1 = new ScrollPane();
 		sdM1.setPrefSize(1200, 250);
 		sdM1.setContent(mesaJ1);
 		grid3.add(sdM1, 0, 0);
+
+		DeckView mesaJ2 = new DeckView(-2);
+		ScrollPane sdM2 = new ScrollPane();
+		sdM2.setPrefSize(1200, 250);
+		sdM2.setContent(mesaJ2);
+		grid3.add(sdM2, 0, 2);
+
 
 		PlacarView placar = new PlacarView();
 		grid3.add(placar, 0, 1);
