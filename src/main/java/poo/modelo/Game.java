@@ -13,6 +13,7 @@ public class Game {
 	private CardDeck maoj1, maoj2;
 	private CardDeck deckj1, deckj2;
 	private CardDeck mesaJ1, mesaJ2;
+	private CardDeck reservaJ1, reservaJ2;
 	private int player;
 	private int jogadas;
 	private List<GameListener> observers;
@@ -30,6 +31,8 @@ public class Game {
 		deckj2 = new CardDeck(5);
 		mesaJ1 = new CardDeck(0);
 		mesaJ2 = new CardDeck(0);
+		reservaJ1 = new CardDeck(0);
+		reservaJ2 = new CardDeck(0);
 		player = 1;
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
@@ -64,6 +67,14 @@ public class Game {
 
 	public CardDeck getMesaJ2() {
 		return mesaJ2;
+	}
+
+	public CardDeck getReservaJ1(){
+		return reservaJ1;
+	}
+
+	public CardDeck getReservaJ2(){
+		return reservaJ2;
 	}
 
 	public void play(CardDeck deckAcionado) {
