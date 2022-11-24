@@ -107,6 +107,7 @@ public class Game {
 				}
 				// Próximo jogador
 				nextPlayer();
+				
 			}
 		}
 	}
@@ -153,7 +154,7 @@ public class Game {
 			//c.flip();
 			deckJ2.addCard(c);
 			//deckJ2.removeSel();
-			
+		
 	}
 	
 	
