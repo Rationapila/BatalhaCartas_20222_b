@@ -34,6 +34,9 @@ public class DeckView extends HBox implements CardViewListener, GameListener {
 	    } else if (jogador == -2) {
 			cDeck = Game.getInstance().getMesaJ2();
 		}
+		else if (jogador == -3){
+			cDeck = Game.getInstance().getZonaPrincipal();
+		}
 
 		cDeck.addGameListener(this);
 

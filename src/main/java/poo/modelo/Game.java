@@ -13,7 +13,7 @@ public class Game {
 	private CardDeck maoj1, maoj2;
 	private CardDeck deckj1, deckj2;
 	private CardDeck mesaJ1, mesaJ2;
-	private CardDeck reservaJ1, reservaJ2;
+	private CardDeck zonaPrincipal;
 	private int player;
 	private int jogadas;
 	private List<GameListener> observers;
@@ -31,8 +31,8 @@ public class Game {
 		deckj2 = new CardDeck(5);
 		mesaJ1 = new CardDeck(0);
 		mesaJ2 = new CardDeck(0);
-		reservaJ1 = new CardDeck(0);
-		reservaJ2 = new CardDeck(0);
+		zonaPrincipal = new CardDeck(0);
+		
 		player = 1;
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
@@ -69,63 +69,22 @@ public class Game {
 		return mesaJ2;
 	}
 
-	public CardDeck getReservaJ1(){
-		return reservaJ1;
+	public CardDeck getZonaPrincipal() {
+		return zonaPrincipal;
 	}
-
-	public CardDeck getReservaJ2(){
-		return reservaJ2;
-	}
+	
 
 	public void play(CardDeck deckAcionado) {
-		GameEvent gameEvent = null;
-		if (player == 3) {
-			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.MUSTCLEAN, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
-			return;
-		}
-		if (deckAcionado == maoj1) {
-			if (player != 1) {	
-				
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
-				for (var observer : observers) {
-					observer.notify(gameEvent);
-				}
-			} else {
+		
 				// Vira a carta
-				maoj1.getSelectedCard().flip();
+				maoj1.getSelectedCard();
 				// Proximo jogador
-				nextPlayer();
 				
-			}
-		} else if (deckAcionado == maoj2) {
-			if (player != 2) {
+			
+				maoj2.getSelectedCard();
 				
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
-				for (var observer : observers) {
-					observer.notify(gameEvent);
-				}
-			} else {
-				// Vira a carta
-				maoj2.getSelectedCard().flip();
-				// Verifica quem ganhou a rodada
-				if (maoj1.getSelectedCard().getValue() > maoj2.getSelectedCard().getValue()) {
-					ptsJ1++;
-				} else if (maoj1.getSelectedCard().getValue() < maoj2.getSelectedCard().getValue()) {
-					ptsJ2++;
-				}
-				for (var observer : observers) {
-					observer.notify(gameEvent);
-				}
-				// Próximo jogador
-				nextPlayer();
-				
-			}
-		}
 	}
-
+	
 	// Acionada pelo botao de limpar
 	public void removeSelected() {
 		GameEvent gameEvent = null;
@@ -169,16 +128,40 @@ public class Game {
 		GameEvent gameEvent = null;
 		if (deckj2.getNumberOfCards() <= 0){
 			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.NOCARDS, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
 		}
 		Card c = deckj2.drawCard();
 		maoj2.addCard(c);
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
 	}
 	
 	
 	public void addGameListener(GameListener listener) {
 		observers.add(listener);
 	}
+
+	public void colocaReservaJ1(){
+		mesaJ1.addCard( maoj1.getSelectedCard());
+		maoj1.removeSel();
+	}
+
+	public void colocaReservaJ2(){
+		mesaJ2.addCard(maoj2.getSelectedCard());
+		maoj2.removeSel();
+	}
+
+	public void colocaZonaJ1(){
+		zonaPrincipal.addCard(maoj1.getSelectedCard());
+		maoj1.removeSel();
+	}
+
+	public void colocaZonaJ2(){
+		zonaPrincipal.addCard(maoj2.getSelectedCard());
+		maoj2.removeSel();
+	}
+
+	
 }
+
+

@@ -69,7 +69,7 @@ public class GameWindow extends Application implements GameListener {
 		ScrollPane sd2 = new ScrollPane();
 		sd2.setPrefSize(1200, 250);
 		sd2.setContent(deckJ2);
-		grid2.add(sd2, 0, 2);
+		grid2.add(sd2, 0, 0);
 
 	
 		GridPane grid3 = new GridPane();
@@ -78,16 +78,13 @@ public class GameWindow extends Application implements GameListener {
 		grid3.setVgap(10);
 		grid3.setPadding(new Insets(25, 25, 25, 25));
 
-		//DeckView reservaJ1 = new DeckView(-2);
-		//ScrollPane sd
-
-		/* 
-		DeckView reservaJ1 = new DeckView(-2);
+		
+		DeckView zonaPrincipal = new DeckView(-3);
 		ScrollPane sdR1 = new ScrollPane();
 		sdR1.setPrefSize(1200, 250);
-		sdR1.setContent(reservaJ1);
-		grid3.add(sdR1, 0, 0);
-		*/
+		sdR1.setContent(zonaPrincipal);
+		grid3.add(sdR1, 0, 1);
+		
 		
 		DeckView mesaJ1 = new DeckView(-1);
 		ScrollPane sdM1 = new ScrollPane();
@@ -101,15 +98,32 @@ public class GameWindow extends Application implements GameListener {
 		sdM2.setContent(mesaJ2);
 		grid3.add(sdM2, 0, 2);
 
-
+		/* 
 		PlacarView placar = new PlacarView();
 		grid3.add(placar, 0, 1);
+		*/
 
 		Button butClean = new Button("Clean");
 		grid3.add(butClean, 1, 1);
 		butClean.setOnAction(e -> Game.getInstance().removeSelected());
 
-		
+		Button bancoJ1 = new Button("Colocar na reserva");
+		grid1.add(bancoJ1, 0, 1);
+		bancoJ1.setOnAction(e -> Game.getInstance().colocaReservaJ1());
+
+		Button bancoJ2 = new Button("Colocar na reserva");
+		grid2.add(bancoJ2, 0, 1);
+		bancoJ2.setOnAction(e -> Game.getInstance().colocaReservaJ2());
+
+		Button zonaJ1 = new Button("Zona principal");
+		grid1.add(zonaJ1, 0, 2);
+		zonaJ1.setOnAction(e -> Game.getInstance().colocaZonaJ1());
+
+		Button zonaJ2 = new Button("Zona principal");
+		grid2.add(zonaJ2, 0, 2);
+		zonaJ2.setOnAction(e -> Game.getInstance().colocaZonaJ2());
+
+		/* 
 		Button butDrawP1 = new Button("Draw");
 		grid1.add(butDrawP1, 2, 1);
 		butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
@@ -117,7 +131,7 @@ public class GameWindow extends Application implements GameListener {
 		Button butDrawP2 = new Button("Draw");
 		grid2.add(butDrawP2, 2, 1);
 		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
-		
+		*/
 		
 
 		tab1.setContent(grid1);
@@ -128,7 +142,6 @@ public class GameWindow extends Application implements GameListener {
 		root.getChildren().add(tabPane);
 		
         Scene scene = new Scene(root);
-
         primaryStage.setScene(scene);
         primaryStage.show();
     }
