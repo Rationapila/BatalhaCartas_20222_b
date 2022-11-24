@@ -100,12 +100,7 @@ public class GameWindow extends Application implements GameListener {
 		grid2.add(butDrawP2, 2, 1);
 		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
 		
-
-		DeckView mesaJ2 = new DeckView(-2);
-		ScrollPane sdM2 = new ScrollPane();
-		sdM2.setPrefSize(1200, 250);
-		sdM2.setContent(mesaJ2);
-		grid3.add(sdM2, 0, 2);
+		
 
 		tab1.setContent(grid1);
         tab2.setContent(grid2);
@@ -154,6 +149,14 @@ public class GameWindow extends Application implements GameListener {
 				alert.setContentText(text);
 				alert.showAndWait();
 				break;
+			case NOCARDS:
+			String texto = "Não há mais cartas em seu deck.";
+			alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Cuidado!");
+			alert.setHeaderText(null);
+			alert.setContentText(texto);
+			alert.showAndWait();
+			break;
 			case REMOVESEL:
 				// Esse evento não vem para cá
 			}

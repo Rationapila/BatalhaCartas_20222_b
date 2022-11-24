@@ -10,12 +10,13 @@ import java.util.Random;
 //import poo.modelo.GameEvent.Target;
 
 public class CardDeck {
-	public static final int NCARDS = 6;
+	public  int ncards;
 	private List<Card> cartas;
 	private Card selected;
 	private List<GameListener> observers;
 
 	public CardDeck(int nroCartas) {
+		ncards = nroCartas;
 		cartas = new ArrayList<>(nroCartas);
 		selected = null;
 		Random r = new Random();
@@ -57,6 +58,13 @@ public class CardDeck {
 		for (var observer : observers) {
 			observer.notify(gameEvent);
 		}
+	}
+
+
+	public Card drawCard(){
+		Card c = cartas.get(0);
+		cartas.remove(0);
+		return c;
 	}
 
 	public void setSelectedCard(Card card) {

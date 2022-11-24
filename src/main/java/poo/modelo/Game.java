@@ -10,7 +10,8 @@ import java.util.Random;
 public class Game {
 	private static Game game = new Game();
 	private int ptsJ1, ptsJ2;
-	private CardDeck deckJ1, deckJ2;
+	private CardDeck maoj1, maoj2;
+	private CardDeck deckj1, deckj2;
 	private CardDeck mesaJ1, mesaJ2;
 	private int player;
 	private int jogadas;
@@ -23,12 +24,14 @@ public class Game {
 	private Game() {
 		ptsJ1 = 0;
 		ptsJ2 = 0;
-		deckJ1 = new CardDeck(CardDeck.NCARDS);
-		deckJ2 = new CardDeck(CardDeck.NCARDS);
+		maoj1 = new CardDeck(6);
+		maoj2 = new CardDeck(6);
+		deckj1 = new CardDeck(5);
+		deckj2 = new CardDeck(5);
 		mesaJ1 = new CardDeck(0);
 		mesaJ2 = new CardDeck(0);
 		player = 1;
-		jogadas = CardDeck.NCARDS;
+		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
 	}
 
@@ -47,12 +50,12 @@ public class Game {
 		return ptsJ2;
 	}
 
-	public CardDeck getDeckJ1() {
-		return deckJ1;
+	public CardDeck getmaoj1() {
+		return maoj1;
 	}
 
-	public CardDeck getDeckJ2() {
-		return deckJ2;
+	public CardDeck getmaoj2() {
+		return maoj2;
 	}
 
 	public CardDeck getMesaJ1() {
@@ -72,7 +75,7 @@ public class Game {
 			}
 			return;
 		}
-		if (deckAcionado == deckJ1) {
+		if (deckAcionado == maoj1) {
 			if (player != 1) {	
 				
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
@@ -81,12 +84,12 @@ public class Game {
 				}
 			} else {
 				// Vira a carta
-				deckJ1.getSelectedCard().flip();
+				maoj1.getSelectedCard().flip();
 				// Proximo jogador
 				nextPlayer();
 				
 			}
-		} else if (deckAcionado == deckJ2) {
+		} else if (deckAcionado == maoj2) {
 			if (player != 2) {
 				
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.INVPLAY, "2");
@@ -95,11 +98,11 @@ public class Game {
 				}
 			} else {
 				// Vira a carta
-				deckJ2.getSelectedCard().flip();
+				maoj2.getSelectedCard().flip();
 				// Verifica quem ganhou a rodada
-				if (deckJ1.getSelectedCard().getValue() > deckJ2.getSelectedCard().getValue()) {
+				if (maoj1.getSelectedCard().getValue() > maoj2.getSelectedCard().getValue()) {
 					ptsJ1++;
-				} else if (deckJ1.getSelectedCard().getValue() < deckJ2.getSelectedCard().getValue()) {
+				} else if (maoj1.getSelectedCard().getValue() < maoj2.getSelectedCard().getValue()) {
 					ptsJ2++;
 				}
 				for (var observer : observers) {
@@ -126,35 +129,41 @@ public class Game {
 			}
 		}
 		
-		mesaJ1.addCard( deckJ1.getSelectedCard() );
-		//deckJ1.addCard( deckJ1.getSelectedCard() );
-		deckJ1.removeSel();
+		mesaJ1.addCard( maoj1.getSelectedCard() );
+		//maoj1.addCard( maoj1.getSelectedCard() );
+		maoj1.removeSel();
 		
-		mesaJ2.addCard( deckJ2.getSelectedCard() );
-		//deckJ2.addCard( deckJ2.getSelectedCard() );
-		deckJ2.removeSel();
+		mesaJ2.addCard( maoj2.getSelectedCard() );
+		//maoj2.addCard( maoj2.getSelectedCard() );
+		maoj2.removeSel();
 		nextPlayer();
 	}
 
 	
 	public void drawCardP1(){
-		Random r = new Random();
-			int n = r.nextInt(10) + 1;
-			Card c = new Card("C" + n, "img" + n, n);
-			//c.flip();
-			deckJ1.addCard(c);
-			//deckJ1.removeSel();
-	
+		GameEvent gameEvent = null;
+		if (deckj1.getNumberOfCards() <= 0){
+			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.NOCARDS, "");
+
+		}
+
+		Card c = deckj1.drawCard();
+		maoj1.addCard(c);
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
 	}
 
 	public void drawCardP2(){
-		Random r = new Random();
-			int n = r.nextInt(10) + 1;
-			Card c = new Card("C" + n, "img" + n, n);
-			//c.flip();
-			deckJ2.addCard(c);
-			//deckJ2.removeSel();
-		
+		GameEvent gameEvent = null;
+		if (deckj2.getNumberOfCards() <= 0){
+			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.NOCARDS, "");
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
+		}
+		Card c = deckj2.drawCard();
+		maoj2.addCard(c);
 	}
 	
 	

@@ -26,9 +26,9 @@ public class DeckView extends HBox implements CardViewListener, GameListener {
 
 		cDeck = null;
 		if (jogador == 1) {
-			cDeck = Game.getInstance().getDeckJ1();
+			cDeck = Game.getInstance().getmaoj1();
 		} else if (jogador == 2) {
-			cDeck = Game.getInstance().getDeckJ2();
+			cDeck = Game.getInstance().getmaoj2();
 		} else if (jogador == -1) {
 			cDeck = Game.getInstance().getMesaJ1();
 	    } else if (jogador == -2) {
@@ -65,7 +65,7 @@ public class DeckView extends HBox implements CardViewListener, GameListener {
 		for (Card card : cDeck.getCards()) {
 			System.out.println("show>" + card);
 			CardView cv = new CardView(card);
-			//cv.setCardViewObserver(this);
+			cv.setCardViewObserver(this);
 			this.getChildren().add(cv);
 		}
 	}
