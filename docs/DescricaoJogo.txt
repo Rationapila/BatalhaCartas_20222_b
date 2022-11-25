@@ -1,12 +1,34 @@
 Jogo: Batalha de Cartas
 Instruções:
-- O deck da parte superior da janela e o deck do jogador 1. O da parte inferior o do jogador 2.
-- O jogador 1 sempre joga primeiro
-- Na sua vez cada jogador escolhe uma carta para virar
-- O jogador que virar a carta de valor maior ganha a rodada (1 ponto)
-- O sistema verifica quem ganhou a rodada logo após o jogador 2 virar sua carta
-- Para iniciar a proxima rodada e necessario clicar o botao "clean"
-- Quando as cartas acabam o jogo termina
+- cada jogador tem um deck, uma mão, um banco de pokemons, e um pokemon ativo
+- o deck tem 60 cartas
+- cada jogador começa comprando 7 cartas do deck para a mão
+- O jogador 1 sempre começa jogando
+- O jogador que não tiver um pokemon ativo ou no banco perde
+- o jogador que não tiver cartas no deck durante uma compra perde
+
+Catas:
+   	energia
+	- tipo
+	
+	treinador
+	- nome
+	- efeito
+
+	pokemon
+	- nome
+	- tipo
+	- ataque
+	- vida
+	- fraqueza
+	- resistência
+	- custo de recuo
+
+Ataque:
+- nome
+- custo
+- dano 
+- efeito (ex: cura o atacante em 20)
 
 Implementacao:
 - A lógica do jogo e controlada pela classe "Game".
