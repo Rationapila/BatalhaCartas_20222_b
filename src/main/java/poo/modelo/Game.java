@@ -13,7 +13,7 @@ public class Game {
 	private CardDeck maoj1, maoj2;
 	private CardDeck deckj1, deckj2;
 	private CardDeck mesaJ1, mesaJ2;
-	private CardDeck zonaPrincipal;
+	private CardDeck zonaPrincipalJ1, zonaPrincipalJ2;
 	private int player;
 	private int jogadas;
 	private List<GameListener> observers;
@@ -27,11 +27,12 @@ public class Game {
 		ptsJ2 = 0;
 		maoj1 = new CardDeck(6);
 		maoj2 = new CardDeck(6);
-		deckj1 = new CardDeck(5);
-		deckj2 = new CardDeck(5);
+		deckj1 = new CardDeck(40);
+		deckj2 = new CardDeck(40);
 		mesaJ1 = new CardDeck(0);
 		mesaJ2 = new CardDeck(0);
-		zonaPrincipal = new CardDeck(0);
+		zonaPrincipalJ1 = new CardDeck(0);
+		zonaPrincipalJ2 = new CardDeck(0);
 		
 		player = 1;
 		jogadas = maoj1.getNumberOfCards();
@@ -69,8 +70,12 @@ public class Game {
 		return mesaJ2;
 	}
 
-	public CardDeck getZonaPrincipal() {
-		return zonaPrincipal;
+	public CardDeck getzonaPrincipalJ1() {
+		return zonaPrincipalJ1;
+	}
+
+	public CardDeck getzonaPrincipalJ2() {
+		return zonaPrincipalJ2;
 	}
 	
 
@@ -152,13 +157,35 @@ public class Game {
 	}
 
 	public void colocaZonaJ1(){
-		zonaPrincipal.addCard(maoj1.getSelectedCard());
-		maoj1.removeSel();
+		GameEvent gameEvent = null;
+		if (zonaPrincipalJ1.getNumberOfCards() == 1){
+			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
+		}
+		else{
+			zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
+			maoj1.removeSel();
+		}
+		
+		
 	}
 
 	public void colocaZonaJ2(){
-		zonaPrincipal.addCard(maoj2.getSelectedCard());
-		maoj2.removeSel();
+		GameEvent gameEvent = null;
+		if (zonaPrincipalJ2.getNumberOfCards() == 1){
+			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
+		}
+		else{
+			zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
+			maoj2.removeSel();
+		}
+		
+		
 	}
 
 	

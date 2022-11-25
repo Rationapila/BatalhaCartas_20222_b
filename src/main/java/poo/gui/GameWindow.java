@@ -79,24 +79,37 @@ public class GameWindow extends Application implements GameListener {
 		grid3.setPadding(new Insets(25, 25, 25, 25));
 
 		
-		DeckView zonaPrincipal = new DeckView(-3);
+		DeckView zonaPrincipalJ1 = new DeckView(-3);
 		ScrollPane sdR1 = new ScrollPane();
-		sdR1.setPrefSize(1200, 250);
-		sdR1.setContent(zonaPrincipal);
+		sdR1.setPrefSize(800, 225);
+		sdR1.setFitToWidth(true);
+		sdR1.setFitToHeight(true);
+		sdR1.setContent(zonaPrincipalJ1);
 		grid3.add(sdR1, 0, 1);
-		
-		
+
+		DeckView zonaPrincipalJ2 = new DeckView(-4);
+		ScrollPane sdR2 = new ScrollPane();
+		sdR2.setPrefSize(800, 225);
+		sdR2.setFitToWidth(true);
+		sdR2.setFitToHeight(true);
+		sdR2.setContent(zonaPrincipalJ2);
+		grid3.add(sdR2, 0, 2);
+
 		DeckView mesaJ1 = new DeckView(-1);
 		ScrollPane sdM1 = new ScrollPane();
-		sdM1.setPrefSize(1200, 250);
+		sdM1.setPrefSize(800, 225);
+		sdM1.setFitToWidth(true);
+		sdM1.setFitToHeight(true);
 		sdM1.setContent(mesaJ1);
 		grid3.add(sdM1, 0, 0);
 
 		DeckView mesaJ2 = new DeckView(-2);
 		ScrollPane sdM2 = new ScrollPane();
-		sdM2.setPrefSize(1200, 250);
+		sdM2.setPrefSize(800, 225);
+		sdM2.setFitToWidth(true);
+		sdM2.setFitToHeight(true);
 		sdM2.setContent(mesaJ2);
-		grid3.add(sdM2, 0, 2);
+		grid3.add(sdM2, 0, 3);
 
 		/* 
 		PlacarView placar = new PlacarView();
@@ -186,6 +199,14 @@ public class GameWindow extends Application implements GameListener {
 			alert.setTitle("Cuidado!");
 			alert.setHeaderText(null);
 			alert.setContentText(texto);
+			alert.showAndWait();
+			break;
+			case ZONETAKEN:
+			String textZone = "Ja há um Pokémon em sua zona principal.";
+			alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Cuidado!");
+			alert.setHeaderText(null);
+			alert.setContentText(textZone);
 			alert.showAndWait();
 			break;
 			case REMOVESEL:
