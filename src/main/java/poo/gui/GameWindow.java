@@ -14,6 +14,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -133,6 +134,7 @@ public class GameWindow extends Application implements GameListener {
 		Button bancoJ1 = new Button("Colocar na reserva");
 		grid1.add(bancoJ1, 0, 1);
 		bancoJ1.setOnAction(e -> Game.getInstance().colocaReservaJ1());
+		
 
 		Button bancoJ2 = new Button("Colocar na reserva");
 		grid2.add(bancoJ2, 0, 1);
@@ -148,14 +150,29 @@ public class GameWindow extends Application implements GameListener {
 
 		Button readJ1 = new Button("Ver carta");
 		grid1.add(readJ1, 0, 3);
-		readJ1.setOnAction(e -> Game.getInstance().lerCartaJ1());
+		readJ1.setOnAction(e -> Game.getInstance().lerCarta(1));
 
 		Button readJ2 = new Button("Ver carta");
 		grid2.add(readJ2, 0, 3);
-		readJ2.setOnAction(e -> Game.getInstance().lerCartaJ2());
+		readJ2.setOnAction(e -> Game.getInstance().lerCarta(2));
+
+		Button readM1 = new Button("Ver carta");
+		grid3.add(readM1, 1, 0);
+		readM1.setOnAction(e -> Game.getInstance().lerCarta(3));
+
+		Button readM2 = new Button("Ver carta");
+		grid3.add(readM2, 1, 3);
+		readM2.setOnAction(e -> Game.getInstance().lerCarta(4));
+
+		Button readZ1 = new Button("Ver carta");
+		grid3.add(readZ1, 1, 1);
+		readZ1.setOnAction(e -> Game.getInstance().lerCarta(5));
+
+		Button readZ2 = new Button("Ver carta");
+		grid3.add(readZ2, 1, 2);
+		readZ2.setOnAction(e -> Game.getInstance().lerCarta(6));
 
 
-		
 		Button butDrawP1 = new Button("Draw");
 		grid1.add(butDrawP1, 0, 4);
 		butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
@@ -232,7 +249,7 @@ public class GameWindow extends Application implements GameListener {
 			case READCARDJ1:
 			alert = new Alert(AlertType.INFORMATION);
 			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
-			String cartaIdJ1 = Game.getInstance().getIdCartaJ1();
+			String cartaIdJ1 = Game.getInstance().getIdCarta(1);
 			ImageView imageViewJ1 = ImageFactory.getInstance().createImage(cartaIdJ1);
 			imageViewJ1.setPreserveRatio(true);
 			imageViewJ1.setSmooth(true);
@@ -244,11 +261,59 @@ public class GameWindow extends Application implements GameListener {
 			case READCARDJ2:
 			alert = new Alert(AlertType.INFORMATION);
 			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
-			String cartaIdJ2 = Game.getInstance().getIdCartaJ2();
+			String cartaIdJ2 = Game.getInstance().getIdCarta(2);
 			ImageView imageViewJ2 = ImageFactory.getInstance().createImage(cartaIdJ2);
 			imageViewJ2.setPreserveRatio(true);
 			imageViewJ2.setSmooth(false);
 			alert.setGraphic(imageViewJ2);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			break;
+			case READCARDM1:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdM1 = Game.getInstance().getIdCarta(3);
+			ImageView imageViewM1 = ImageFactory.getInstance().createImage(cartaIdM1);
+			imageViewM1.setPreserveRatio(true);
+			imageViewM1.setSmooth(false);
+			alert.setGraphic(imageViewM1);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			break;
+			case READCARDM2:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdM2 = Game.getInstance().getIdCarta(4);
+			ImageView imageViewM2 = ImageFactory.getInstance().createImage(cartaIdM2);
+			imageViewM2.setPreserveRatio(true);
+			imageViewM2.setSmooth(false);
+			alert.setGraphic(imageViewM2);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			break;
+			case READCARDZ1:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdZ1 = Game.getInstance().getIdCarta(5);
+			ImageView imageViewZ1 = ImageFactory.getInstance().createImage(cartaIdZ1);
+			imageViewZ1.setPreserveRatio(true);
+			imageViewZ1.setSmooth(false);
+			alert.setGraphic(imageViewZ1);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			break;
+			case READCARDZ2:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdZ2 = Game.getInstance().getIdCarta(6);
+			ImageView imageViewZ2 = ImageFactory.getInstance().createImage(cartaIdZ2);
+			imageViewZ2.setPreserveRatio(true);
+			imageViewZ2.setSmooth(false);
+			alert.setGraphic(imageViewZ2);
 			alert.setTitle("Leitura de Carta");
 			alert.setHeaderText(null);
 			alert.showAndWait();

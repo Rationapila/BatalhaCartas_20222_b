@@ -177,28 +177,47 @@ public class Game {
 		}
 	}
 
-	public String getIdCartaJ1(){
+
+
+	
+
+	public String getIdCarta(int NJogador){
+		if(NJogador == 1)
 		return maoj1.getSelectedCard().getImageId();
-	}
-
-	public void lerCartaJ1(){
-		GameEvent gameEvent = null;
-		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDJ1, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
-	}
-
-	public String getIdCartaJ2(){
+		if(NJogador == 2)
 		return maoj2.getSelectedCard().getImageId();
+		if(NJogador == 3)
+		return mesaJ1.getSelectedCard().getImageId();
+		if(NJogador == 4)
+		return mesaJ2.getSelectedCard().getImageId();
+		if(NJogador == 5)
+		return zonaPrincipalJ1.getSelectedCard().getImageId();
+		if(NJogador == 6)
+		return zonaPrincipalJ2.getSelectedCard().getImageId();
+		
+		return null;
+		
 	}
 
-	public void lerCartaJ2(){
+	public void lerCarta(int NJogador){
 		GameEvent gameEvent = null;
+		if (NJogador == 1)
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDJ1, "");
+		if (NJogador == 2)
 		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDJ2, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
+		if (NJogador == 3)
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDM1, "");
+		if (NJogador == 4)
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDM2, "");
+		if (NJogador == 5)
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDZ1, "");
+		if (NJogador == 6)
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDZ2, "");
+		
+		
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
 	}
 
 	
