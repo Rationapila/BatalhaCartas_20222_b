@@ -3,7 +3,7 @@ package poo.modelo;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-public class Card {
+public abstract class Card {
 	private String id;
 	private String imageId;
 	private int value;
