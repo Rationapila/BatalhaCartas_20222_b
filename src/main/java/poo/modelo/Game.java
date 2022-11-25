@@ -79,14 +79,8 @@ public class Game {
 	
 
 	public void play(CardDeck deckAcionado) {
-		
-				// Vira a carta
-				maoj1.getSelectedCard();
-				// Proximo jogador
-				
-			
+				maoj1.getSelectedCard();	
 				maoj2.getSelectedCard();
-				
 	}
 	
 	// Acionada pelo botao de limpar
@@ -182,6 +176,32 @@ public class Game {
 			maoj2.removeSel();
 		}
 	}
+
+	public String getIdCartaJ1(){
+		return maoj1.getSelectedCard().getImageId();
+	}
+
+	public void lerCartaJ1(){
+		GameEvent gameEvent = null;
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDJ1, "");
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
+	}
+
+	public String getIdCartaJ2(){
+		return maoj2.getSelectedCard().getImageId();
+	}
+
+	public void lerCartaJ2(){
+		GameEvent gameEvent = null;
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDJ2, "");
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
+	}
+
+	
 }
 
 

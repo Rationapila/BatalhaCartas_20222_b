@@ -1,5 +1,6 @@
 package poo.modelo;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class ImageFactory {
 		images = new HashMap<>();
 	}
 
-	private String id2File(String imgId) {
+	public static String id2File(String imgId) {
 		switch (imgId) {
 		case "img1":
 			return ("/imagens/Um.png");
@@ -48,16 +49,20 @@ public class ImageFactory {
 	}
 
 
+	
+
 	public ImageView createImage(String imgId) {
 		Image img = images.get(imgId);
 		
 		if (img == null) {
 //			img = new Image(id2File(imgId));
-			img = new Image(getClass().getResourceAsStream(id2File(imgId)),450,225,true,true);
+			img = new Image(getClass().getResourceAsStream(id2File(imgId)),1000,500,true,true);
 			images.put(imgId, img);
+
 		}
 
 		ImageView imgv = new ImageView(img);
 		return imgv;
 	}
+
 }

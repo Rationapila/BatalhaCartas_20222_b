@@ -10,13 +10,17 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import poo.modelo.Game;
 import poo.modelo.GameEvent;
 import poo.modelo.GameListener;
+import poo.modelo.ImageFactory;
 
 public class GameWindow extends Application implements GameListener {
 
@@ -53,6 +57,8 @@ public class GameWindow extends Application implements GameListener {
 		DeckView deckJ1 = new DeckView(1);
 		ScrollPane sd1 = new ScrollPane();
 		sd1.setPrefSize(1200, 250);
+		sd1.setFitToWidth(true);
+		sd1.setFitToHeight(true);
 		sd1.setContent(deckJ1);
 		grid1.add(sd1, 0, 0);
 
@@ -68,6 +74,8 @@ public class GameWindow extends Application implements GameListener {
 		DeckView deckJ2 = new DeckView(2);
 		ScrollPane sd2 = new ScrollPane();
 		sd2.setPrefSize(1200, 250);
+		sd2.setFitToWidth(true);
+		sd2.setFitToHeight(true);
 		sd2.setContent(deckJ2);
 		grid2.add(sd2, 0, 0);
 
@@ -116,9 +124,11 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(placar, 0, 1);
 		*/
 
+		/* 
 		Button butClean = new Button("Clean");
 		grid3.add(butClean, 1, 1);
 		butClean.setOnAction(e -> Game.getInstance().removeSelected());
+		*/
 
 		Button bancoJ1 = new Button("Colocar na reserva");
 		grid1.add(bancoJ1, 0, 1);
@@ -136,15 +146,24 @@ public class GameWindow extends Application implements GameListener {
 		grid2.add(zonaJ2, 0, 2);
 		zonaJ2.setOnAction(e -> Game.getInstance().colocaZonaJ2());
 
-		/* 
+		Button readJ1 = new Button("Ver carta");
+		grid1.add(readJ1, 0, 3);
+		readJ1.setOnAction(e -> Game.getInstance().lerCartaJ1());
+
+		Button readJ2 = new Button("Ver carta");
+		grid2.add(readJ2, 0, 3);
+		readJ2.setOnAction(e -> Game.getInstance().lerCartaJ2());
+
+
+		
 		Button butDrawP1 = new Button("Draw");
-		grid1.add(butDrawP1, 2, 1);
+		grid1.add(butDrawP1, 0, 4);
 		butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
 
 		Button butDrawP2 = new Button("Draw");
-		grid2.add(butDrawP2, 2, 1);
+		grid2.add(butDrawP2, 0, 4);
 		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
-		*/
+		
 		
 
 		tab1.setContent(grid1);
@@ -195,6 +214,7 @@ public class GameWindow extends Application implements GameListener {
 				break;
 			case NOCARDS:
 			String texto = "Não há mais cartas em seu deck.";
+			
 			alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Cuidado!");
 			alert.setHeaderText(null);
@@ -207,6 +227,30 @@ public class GameWindow extends Application implements GameListener {
 			alert.setTitle("Cuidado!");
 			alert.setHeaderText(null);
 			alert.setContentText(textZone);
+			alert.showAndWait();
+			break;
+			case READCARDJ1:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdJ1 = Game.getInstance().getIdCartaJ1();
+			ImageView imageViewJ1 = ImageFactory.getInstance().createImage(cartaIdJ1);
+			imageViewJ1.setPreserveRatio(true);
+			imageViewJ1.setSmooth(true);
+			alert.setGraphic(imageViewJ1);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
+			alert.showAndWait();
+			break;
+			case READCARDJ2:
+			alert = new Alert(AlertType.INFORMATION);
+			alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
+			String cartaIdJ2 = Game.getInstance().getIdCartaJ2();
+			ImageView imageViewJ2 = ImageFactory.getInstance().createImage(cartaIdJ2);
+			imageViewJ2.setPreserveRatio(true);
+			imageViewJ2.setSmooth(false);
+			alert.setGraphic(imageViewJ2);
+			alert.setTitle("Leitura de Carta");
+			alert.setHeaderText(null);
 			alert.showAndWait();
 			break;
 			case REMOVESEL:

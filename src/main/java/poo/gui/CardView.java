@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import poo.modelo.Card;
 import poo.modelo.ImageFactory;
 
@@ -15,8 +16,14 @@ public class CardView extends Button implements PropertyChangeListener{
 	public CardView(Card aCard) {
 		super("", ImageFactory.getInstance().createImage("imgBck"));
 
-		if (aCard.isFacedUp())
-		   this.setGraphic(ImageFactory.getInstance().createImage(aCard.getImageId()));
+		if (aCard.isFacedUp()){
+			ImageView a = ImageFactory.getInstance().createImage(aCard.getImageId());
+			a.setFitHeight(210);
+			a.setPreserveRatio(true);
+			a.setSmooth(true);
+			this.setGraphic(a);
+		}
+			
 		
 		card = aCard;
 		card.addPropertyChangeListener(this);
