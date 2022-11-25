@@ -53,7 +53,7 @@ public class ImageFactory {
 		
 		if (img == null) {
 //			img = new Image(id2File(imgId));
-			img = new Image(getClass().getResourceAsStream(id2File(imgId)),300,150,true,true);
+			img = new Image(getClass().getResourceAsStream(id2File(imgId)),450,225,true,true);
 			images.put(imgId, img);
 		}
 

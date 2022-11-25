@@ -33,7 +33,6 @@ public class Game {
 		mesaJ2 = new CardDeck(0);
 		zonaPrincipalJ1 = new CardDeck(0);
 		zonaPrincipalJ2 = new CardDeck(0);
-		
 		player = 1;
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
@@ -41,7 +40,7 @@ public class Game {
 
 	private void nextPlayer() {
 		player++;
-		if (player == 4) {
+		if (player == 3) {
 			player = 1;
 		}
 	}
@@ -168,8 +167,6 @@ public class Game {
 			zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
 			maoj1.removeSel();
 		}
-		
-		
 	}
 
 	public void colocaZonaJ2(){
@@ -184,11 +181,7 @@ public class Game {
 			zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
 			maoj2.removeSel();
 		}
-		
-		
 	}
-
-	
 }
 
 
