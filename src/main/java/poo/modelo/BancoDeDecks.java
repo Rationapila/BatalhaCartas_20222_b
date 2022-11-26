@@ -12,13 +12,16 @@ public class BancoDeDecks {
         Estagio.BASICO, Type.LUTADOR, null);
         licktung.addAtaque(drool);
 
+        //Cartas do jogador 2:
         Ataque punch = new Ataque(1, 10, Type.INCOLOR);
         CardPokemon pancham = new CardPokemon("2", "2", 70, 2, Type.LUTADOR, 
         Estagio.BASICO, Type.SOMBRIO, null);
+        pancham.addAtaque(punch);
 
 
 
         deckj1.addCard(licktung);
+        deckj2.addCard(pancham);
         if (nDeck == 1){
             return deckj1;
         }

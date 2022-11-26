@@ -43,6 +43,6 @@ public class Card {
 	}
 
 	public String toString() {
-		return String.format("Card(%s, %d, %s)",id, faceUp);
+		return String.format("Card(%s, %b)",id, faceUp);
 	}
 }

@@ -10,4 +10,17 @@ public class Ataque {
         dano = umDano;
         tipo = umTipo;
     }
+
+    public int getCusto() {
+        return custo;
+    }
+
+    public int getDano() {
+        return dano;
+    }
+
+    public Type getTipo() {
+        return tipo;
+    }
+    
 }

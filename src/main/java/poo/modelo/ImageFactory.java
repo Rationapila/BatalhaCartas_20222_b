@@ -46,6 +46,8 @@ public class ImageFactory {
 		//Pokemon:
 		case "1":
 			return ("/imagens/Pokemons/Licktung.png");
+		case "2":
+			return ("/imagens/Pokemons/Pancham.png");
 		default:
 			throw new IllegalArgumentException("Invalid image Id");
 		}
