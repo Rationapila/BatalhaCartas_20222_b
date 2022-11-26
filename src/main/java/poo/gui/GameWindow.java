@@ -179,8 +179,8 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(ataqueZ1, 2, 1);
 		ataqueZ1.setOnAction(e -> Game.getInstance().ataqueZ1(1));
 
-		Button VidaPokemon1 = new Button (Game.getInstance().getVidaZ1());
-		grid3.add(VidaPokemon1, 2, 1);
+		Button VidaPokemon1 = new Button (String.valueOf(Game.getInstance().getVidaZ1()));
+		grid3.add(VidaPokemon1, 0, 1);
 		
 
 		Button butDrawP1 = new Button("Draw");
