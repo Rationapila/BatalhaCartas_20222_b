@@ -29,7 +29,7 @@ public class PlacarView extends GridPane implements GameListener {
 
 		this.add(new Label("Vida:"), 0, 0);
 		this.add(ptsJ1, 1, 0);
-		this.add(new Label("vida:"), 0, 1);
+		this.add(new Label("Vida:"), 0, 1);
 		this.add(ptsJ2, 1, 1);
 	}
 
