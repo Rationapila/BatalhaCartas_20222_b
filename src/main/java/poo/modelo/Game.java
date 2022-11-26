@@ -204,25 +204,27 @@ public class Game {
 	}
 
 	public void ataqueZ1(int NumeroAtaque){
+		GameEvent gameEvent = null;
 		Card PokemonAtacante = comparadorPokemon;
 		Card PokemonAtacado = comparadorPokemon;
 		Ataque ataque;
 		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
-			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass()){
+			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass())
 				PokemonAtacante = zonaPrincipalJ1.getCard(i);
 		}
 		for (int j = 0; j < zonaPrincipalJ2.getNumberOfCards(); j++){
-			if (zonaPrincipalJ2.getCard(j).getClass() == comparadorPokemon.getClass()){
+			if (zonaPrincipalJ2.getCard(j).getClass() == comparadorPokemon.getClass())
 				PokemonAtacado = zonaPrincipalJ2.getCard(j);
-			}
+		}
 		CardPokemon atacante = (CardPokemon) PokemonAtacante;
 		CardPokemon atacado = (CardPokemon) PokemonAtacado;
 		if (NumeroAtaque == 1){
 			ataque = atacante.getAtaque(1);
-			atacado.recebeDano(ataque.getDano());
+			atacado.recebeDano(50);
 		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
 		}
-	}
 	}
 
 	public String getIdCarta(int NJogador){
