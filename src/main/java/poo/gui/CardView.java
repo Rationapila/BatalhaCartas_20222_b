@@ -18,7 +18,7 @@ public class CardView extends Button implements PropertyChangeListener{
 
 		if (aCard.isFacedUp()){
 			ImageView a = ImageFactory.getInstance().createImage(aCard.getImageId());
-			a.setFitHeight(210);
+			a.setFitHeight(165);
 			a.setPreserveRatio(true);
 			a.setSmooth(true);
 			this.setGraphic(a);
