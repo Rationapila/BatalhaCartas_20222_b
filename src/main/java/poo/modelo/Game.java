@@ -164,14 +164,15 @@ public class Game {
 		GameEvent gameEvent = null;
 		if (zonaPrincipalJ1.getNumberOfCards() == 1){
 			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
+			
 		}
 		else{
 			zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
 			vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
 			maoj1.removeSel();
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
 		}
 	}
 
@@ -179,14 +180,14 @@ public class Game {
 		GameEvent gameEvent = null;
 		if (zonaPrincipalJ2.getNumberOfCards() == 1){
 			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-			for (var observer : observers) {
-				observer.notify(gameEvent);
-			}
 		}
 		else{
 			zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
 			vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
 			maoj2.removeSel();
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
 		}
 	}
 
