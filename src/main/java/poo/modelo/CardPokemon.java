@@ -54,6 +54,10 @@ public class CardPokemon extends Card {
         return tipo;
     }
 
+    public void recebeDano(int dano){
+        hp -= dano;
+    }
+
     public Type getFraqueza() {
         return fraqueza;
     }
