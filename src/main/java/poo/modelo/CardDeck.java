@@ -22,7 +22,7 @@ public class CardDeck {
 		Random r = new Random();
 		for (int i = 0; i < nroCartas; i++) {
 			int n = r.nextInt(10) + 1;
-			Card c = new Card("C" + n, "img" + n, n);
+			Card c = new Card("C" + n, "img" + n);
 			//c.flip();
 			cartas.add(c);
 		}

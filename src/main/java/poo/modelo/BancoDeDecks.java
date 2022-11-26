@@ -7,13 +7,18 @@ public class BancoDeDecks {
         CardDeck deckj2 = new CardDeck(0);
 
         //Cartas do Jogador 1:
-        Ataque ataqueLicktung = new Ataque (2, 30, Type.NORMAL);
-        CardPokemon Licktung = new CardPokemon("1", "1", 0, 110, ataqueLicktung, 4, Type.NORMAL,
+        Ataque drool = new Ataque (2, 30, Type.INCOLOR);
+        CardPokemon licktung = new CardPokemon("1", "1", 110, 4, Type.INCOLOR,
         Estagio.BASICO, Type.LUTADOR, null);
+        licktung.addAtaque(drool);
+
+        Ataque punch = new Ataque(1, 10, Type.INCOLOR);
+        CardPokemon pancham = new CardPokemon("2", "2", 70, 2, Type.LUTADOR, 
+        Estagio.BASICO, Type.SOMBRIO, null);
 
 
 
-        deckj1.addCard(Licktung);
+        deckj1.addCard(licktung);
         if (nDeck == 1){
             return deckj1;
         }
