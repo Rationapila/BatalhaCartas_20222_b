@@ -170,7 +170,7 @@ public class Game {
 		}
 		else{
 			zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
-			vidaPj1 = ((CardPokemon)maoj1.getSelectedCard()).getHp();
+			vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
 			maoj1.removeSel();
 		}
 	}
@@ -185,7 +185,7 @@ public class Game {
 		}
 		else{
 			zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
-			vidaPj2 = ((CardPokemon)maoj2.getSelectedCard()).getHp();
+			vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
 			maoj2.removeSel();
 		}
 	}
