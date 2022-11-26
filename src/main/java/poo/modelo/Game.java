@@ -207,7 +207,19 @@ public class Game {
 
 	public void ataqueZ1(int NumeroAtaque){
 		GameEvent gameEvent = null;
-		vidaPj2 -= ((pokemonZ1.getAtaque(0).getDano()));
+		if (NumeroAtaque == 1){
+			vidaPj2 -= ((pokemonZ1.getAtaque(0).getDano()));
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
+	}
+
+	public void ataqueZ2(int NumeroAtaque){
+		GameEvent gameEvent = null;
+		if (NumeroAtaque == 1){
+			vidaPj1 -= ((pokemonZ2.getAtaque(0).getDano()));
+		}
 		for (var observer : observers) {
 			observer.notify(gameEvent);
 		}
