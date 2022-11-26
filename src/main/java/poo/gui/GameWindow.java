@@ -122,7 +122,7 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(sdM2, 0, 4);
 
 		PlacarView placar = new PlacarView();
-		grid3.add(placar, 0, 1);
+		grid3.add(placar, 0, 2);
 		// --------------------------------------------------------------
 		/* 
 		PlacarView placar = new PlacarView();
