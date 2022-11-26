@@ -188,9 +188,21 @@ public class Game {
 		}
 	}
 
+	public int getVidaZ1(){
+		Card PokemonZ1 = comparadorPokemon;
+		Ataque ataque;
+		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
+			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass()){
+				PokemonZ1 = zonaPrincipalJ1.getCard(i);
+		}
+	}
+		CardPokemon Pokemon = (CardPokemon) PokemonZ1;
+		return Pokemon.getHp();
+	}
+
 	public void ataqueZ1(int NumeroAtaque){
-		CardPokemon PokemonAtacante;
-		CardPokemon PokemonAtacado;
+		Card PokemonAtacante = comparadorPokemon;
+		Card PokemonAtacado = comparadorPokemon;
 		Ataque ataque;
 		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
 			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass()){
@@ -200,8 +212,11 @@ public class Game {
 			if (zonaPrincipalJ2.getCard(j).getClass() == comparadorPokemon.getClass()){
 				PokemonAtacado = zonaPrincipalJ2.getCard(j);
 			}
+		CardPokemon atacante = (CardPokemon) PokemonAtacante;
+		CardPokemon atacado = (CardPokemon) PokemonAtacado;
 		if (NumeroAtaque == 1){
-			ataque = PokemonAtacante.getAtaque(1);
+			ataque = atacante.getAtaque(1);
+			atacado.recebeDano(ataque.getDano());
 		}
 		}
 	}
