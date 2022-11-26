@@ -24,18 +24,8 @@ public class PlacarView extends GridPane implements GameListener {
 		ptsJ1 = new TextField();
 		ptsJ2 = new TextField();
 
-		if (Game.getInstance().getzonaPrincipalJ1().getCard(0) == null) {
-			ptsJ1.setText("-");
-		} else {
-			CardPokemon pj1 = (CardPokemon)Game.getInstance().getzonaPrincipalJ1().getCard(0);
-			ptsJ1.setText("" + pj1.getHp());
-		}
-		if (Game.getInstance().getzonaPrincipalJ2().getCard(0) == null) {
-			ptsJ2.setText("-");
-		} else {
-			CardPokemon pj2 = (CardPokemon)Game.getInstance().getzonaPrincipalJ2().getCard(0);
-			ptsJ2.setText("" + pj2.getHp());
-		}
+		ptsJ1.setText("" + Game.getInstance().getVidaPj1());
+		ptsJ1.setText("" + Game.getInstance().getVidaPj2());
 
 		this.add(new Label("Vida:"), 0, 0);
 		this.add(ptsJ1, 1, 0);
