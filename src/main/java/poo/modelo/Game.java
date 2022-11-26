@@ -18,6 +18,7 @@ public class Game {
 	private int jogadas;
 	private List<GameListener> observers;
 	private CardPokemon comparadorPokemon;
+	private CardPokemon pokemonZ1, pokemonZ2;
 	
 	public static Game getInstance() {
 		return game;
@@ -169,6 +170,7 @@ public class Game {
 		else{
 			zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
 			vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
+			pokemonZ1 = ((CardPokemon)zonaPrincipalJ1.getCard(0));
 			maoj1.removeSel();
 		}
 		for (var observer : observers) {
@@ -184,6 +186,7 @@ public class Game {
 		else{
 			zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
 			vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
+			pokemonZ2 = ((CardPokemon)zonaPrincipalJ2.getCard(0));
 			maoj2.removeSel();
 		}
 		for (var observer : observers) {
@@ -193,7 +196,6 @@ public class Game {
 
 	public int getVidaZ1(){
 		Card PokemonZ1 = comparadorPokemon;
-		Ataque ataque;
 		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
 			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass()){
 				PokemonZ1 = zonaPrincipalJ1.getCard(i);
@@ -205,23 +207,7 @@ public class Game {
 
 	public void ataqueZ1(int NumeroAtaque){
 		GameEvent gameEvent = null;
-		Card PokemonAtacante = comparadorPokemon;
-		Card PokemonAtacado = comparadorPokemon;
-		Ataque ataque;
-		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
-			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass())
-				PokemonAtacante = zonaPrincipalJ1.getCard(i);
-		}
-		for (int j = 0; j < zonaPrincipalJ2.getNumberOfCards(); j++){
-			if (zonaPrincipalJ2.getCard(j).getClass() == comparadorPokemon.getClass())
-				PokemonAtacado = zonaPrincipalJ2.getCard(j);
-		}
-		CardPokemon atacante = (CardPokemon) PokemonAtacante;
-		CardPokemon atacado = (CardPokemon) PokemonAtacado;
-		if (NumeroAtaque == 1){
-			ataque = atacante.getAtaque(1);
-			atacado.recebeDano(50);
-		}
+		vidaPj2 -= ((pokemonZ1.getAtaque(0).getDano()));
 		for (var observer : observers) {
 			observer.notify(gameEvent);
 		}

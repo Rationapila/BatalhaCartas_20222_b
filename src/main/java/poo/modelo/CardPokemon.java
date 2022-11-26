@@ -15,7 +15,7 @@ public class CardPokemon extends Card {
     Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia) {
         super(umId, umImageId);
         hp = umHp;
-        ataques = new ArrayList<>();
+        ataques = new ArrayList<Ataque>();
         custoRecuo = umCustoRecuo;
         tipo = umTipo;
         categoria = umEstagio;
