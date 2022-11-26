@@ -17,6 +17,7 @@ public class Game {
 	private int player;
 	private int jogadas;
 	private List<GameListener> observers;
+	private CardPokemon comparadorPokemon;
 	
 	public static Game getInstance() {
 		return game;
@@ -36,6 +37,7 @@ public class Game {
 		player = 1;
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
+		comparadorPokemon = new CardPokemon("", "");
 	}
 
 	private void nextPlayer() {
@@ -186,6 +188,25 @@ public class Game {
 		}
 	}
 
+	public void ataqueZ1(int NumeroAtaque){
+		CardPokemon PokemonAtacante;
+		CardPokemon PokemonAtacado;
+		Ataque ataque;
+		for (int i = 0; i < zonaPrincipalJ1.getNumberOfCards(); i++){
+			if (zonaPrincipalJ1.getCard(i).getClass() == comparadorPokemon.getClass()){
+				PokemonAtacante = zonaPrincipalJ1.getCard(i);
+		}
+		for (int j = 0; j < zonaPrincipalJ2.getNumberOfCards(); j++){
+			if (zonaPrincipalJ2.getCard(j).getClass() == comparadorPokemon.getClass()){
+				PokemonAtacado = zonaPrincipalJ2.getCard(j);
+			}
+		if (NumeroAtaque == 1){
+			ataque = PokemonAtacante.getAtaque(1);
+		}
+		}
+	}
+	}
+
 	public String getIdCarta(int NJogador){
 		if(NJogador == 1)
 		return maoj1.getSelectedCard().getImageId();
@@ -200,8 +221,7 @@ public class Game {
 		if(NJogador == 6)
 		return zonaPrincipalJ2.getSelectedCard().getImageId();
 		
-		return null;
-		
+		return null;	
 	}
 
 	public void lerCarta(int NJogador){
@@ -218,7 +238,6 @@ public class Game {
 		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDZ1, "");
 		if (NJogador == 6)
 		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.READCARDZ2, "");
-		
 		
 		for (var observer : observers) {
 			observer.notify(gameEvent);

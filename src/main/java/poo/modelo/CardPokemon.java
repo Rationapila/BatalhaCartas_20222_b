@@ -23,6 +23,11 @@ public class CardPokemon extends Card {
         resistencia = umaResistencia;
     }
 
+    public CardPokemon (String umId, String umImageId){
+        //Construtor apenas para comparações.
+        super(umId, umImageId);
+    }
+
 
     
     public int getHp() {
