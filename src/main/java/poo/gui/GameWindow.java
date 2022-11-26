@@ -167,7 +167,7 @@ public class GameWindow extends Application implements GameListener {
 		readM1.setOnAction(e -> Game.getInstance().lerCarta(3));
 
 		Button readM2 = new Button("Ver carta");
-		grid3.add(readM2, 1, 3);
+		grid3.add(readM2, 1, 4);
 		readM2.setOnAction(e -> Game.getInstance().lerCarta(4));
 
 		Button readZ1 = new Button("Ver carta");
@@ -175,7 +175,7 @@ public class GameWindow extends Application implements GameListener {
 		readZ1.setOnAction(e -> Game.getInstance().lerCarta(5));
 
 		Button readZ2 = new Button("Ver carta");
-		grid3.add(readZ2, 1, 2);
+		grid3.add(readZ2, 1, 3);
 		readZ2.setOnAction(e -> Game.getInstance().lerCarta(6));
 
 		Button ataqueZ1 = new Button ("Ataque 1");
