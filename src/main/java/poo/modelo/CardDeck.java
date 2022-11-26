@@ -80,6 +80,9 @@ public class CardDeck {
 	}
 
 	public Card getCard(int index){
+		if (index >= cartas.size()) {
+			return null;
+		}
 		return cartas.get(index);
 	}
 }

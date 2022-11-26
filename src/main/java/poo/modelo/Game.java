@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Game {
 	private static Game game = new Game();
-	private int ptsJ1, ptsJ2;
+	private int vidaPj1, vidaPj2;
 	private CardDeck maoj1, maoj2;
 	private CardDeck deckj1, deckj2;
 	private CardDeck mesaJ1, mesaJ2;
@@ -24,8 +24,8 @@ public class Game {
 	}
 
 	private Game() {
-		ptsJ1 = 0;
-		ptsJ2 = 0;
+		vidaPj1 = 0;
+		vidaPj2 = 0;
 		maoj1 = BancoDeDecks.getDeck(1);
 		maoj2 = BancoDeDecks.getDeck(2); 
 		deckj1 = new CardDeck(40);
@@ -47,12 +47,12 @@ public class Game {
 		}
 	}
 
-	public int getPtsJ1() {
-		return ptsJ1;
+	public int getVidaPj1() {
+		return vidaPj1;
 	}
 
-	public int getPtsJ2() {
-		return ptsJ2;
+	public int getVidaPj2() {
+		return vidaPj2;
 	}
 
 	public CardDeck getmaoj1() {

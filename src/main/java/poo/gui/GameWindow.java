@@ -103,7 +103,7 @@ public class GameWindow extends Application implements GameListener {
 		sdR2.setFitToWidth(true);
 		sdR2.setFitToHeight(true);
 		sdR2.setContent(zonaPrincipalJ2);
-		grid3.add(sdR2, 0, 2);
+		grid3.add(sdR2, 0, 3);
 
 		DeckView mesaJ1 = new DeckView(-1);
 		ScrollPane sdM1 = new ScrollPane();
@@ -119,7 +119,10 @@ public class GameWindow extends Application implements GameListener {
 		sdM2.setFitToWidth(true);
 		sdM2.setFitToHeight(true);
 		sdM2.setContent(mesaJ2);
-		grid3.add(sdM2, 0, 3);
+		grid3.add(sdM2, 0, 4);
+
+		PlacarView placar = new PlacarView();
+		grid3.add(placar, 0, 1);
 		// --------------------------------------------------------------
 		/* 
 		PlacarView placar = new PlacarView();
@@ -179,8 +182,8 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(ataqueZ1, 2, 1);
 		ataqueZ1.setOnAction(e -> Game.getInstance().ataqueZ1(1));
 
-		Button VidaPokemon1 = new Button (String.valueOf(Game.getInstance().getVidaZ1()));
-		grid3.add(VidaPokemon1, 0, 1);
+		//Button VidaPokemon1 = new Button (String.valueOf(Game.getInstance().getVidaZ1()));
+		//grid3.add(VidaPokemon1, 0, 1);
 		
 
 		Button butDrawP1 = new Button("Draw");
@@ -228,7 +231,7 @@ public class GameWindow extends Application implements GameListener {
 				break;
 			case ENDGAME:
 				String text = "Fim de Jogo !!\n";
-				if (Game.getInstance().getPtsJ1() > Game.getInstance().getPtsJ2()) {
+				if (Game.getInstance().getVidaPj1() > Game.getInstance().getVidaPj2()) {
 					text += "O jogador 1 ganhou !! :-)";
 				} else {
 					text += "O jogador 2 ganhou !! :-)";

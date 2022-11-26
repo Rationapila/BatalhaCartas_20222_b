@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import poo.modelo.CardPokemon;
 import poo.modelo.Game;
 import poo.modelo.GameEvent;
 import poo.modelo.GameListener;
@@ -23,18 +24,28 @@ public class PlacarView extends GridPane implements GameListener {
 		ptsJ1 = new TextField();
 		ptsJ2 = new TextField();
 
-		ptsJ1.setText("" + Game.getInstance().getPtsJ1());
-		ptsJ2.setText("" + Game.getInstance().getPtsJ2());
+		if (Game.getInstance().getzonaPrincipalJ1().getCard(0) == null) {
+			ptsJ1.setText("-");
+		} else {
+			CardPokemon pj1 = (CardPokemon)Game.getInstance().getzonaPrincipalJ1().getCard(0);
+			ptsJ1.setText("" + pj1.getHp());
+		}
+		if (Game.getInstance().getzonaPrincipalJ2().getCard(0) == null) {
+			ptsJ2.setText("-");
+		} else {
+			CardPokemon pj2 = (CardPokemon)Game.getInstance().getzonaPrincipalJ2().getCard(0);
+			ptsJ2.setText("" + pj2.getHp());
+		}
 
-		this.add(new Label("Jogador 1:"), 0, 0);
+		this.add(new Label("Vida:"), 0, 0);
 		this.add(ptsJ1, 1, 0);
-		this.add(new Label("Jogador 2:"), 0, 1);
+		this.add(new Label("vida:"), 0, 1);
 		this.add(ptsJ2, 1, 1);
 	}
 
 	@Override
 	public void notify(GameEvent event) {
-		ptsJ1.setText("" + Game.getInstance().getPtsJ1());
-		ptsJ2.setText("" + Game.getInstance().getPtsJ2());
+		ptsJ1.setText("" + Game.getInstance().getVidaPj1());
+		ptsJ2.setText("" + Game.getInstance().getVidaPj2());
 	}
 }
