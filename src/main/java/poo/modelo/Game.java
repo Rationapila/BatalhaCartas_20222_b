@@ -26,7 +26,7 @@ public class Game {
 		ptsJ1 = 0;
 		ptsJ2 = 0;
 		maoj1 = BancoDeDecks.getDeck(1);
-		maoj2 = BancoDeDecks.getDeck(2); //tentei adicionar o deck 2 mas explodiu kapa
+		maoj2 = BancoDeDecks.getDeck(2); 
 		deckj1 = new CardDeck(40);
 		deckj2 = new CardDeck(40);
 		mesaJ1 = new CardDeck(0);
