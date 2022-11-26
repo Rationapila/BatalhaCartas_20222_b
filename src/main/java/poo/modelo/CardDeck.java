@@ -79,4 +79,7 @@ public class CardDeck {
 		observers.add(listener);
 	}
 
+	public Card getCard(int index){
+		return cartas.get(index);
+	}
 }

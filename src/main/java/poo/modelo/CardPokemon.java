@@ -10,7 +10,7 @@ public class CardPokemon extends Card {
     private Type resistencia;
 
     public CardPokemon(String umId, String umImageId, int val, int umHp, Ataque umAtaque, int umCustoRecuo,
-            Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia) {
+    Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia) {
         super(umId, umImageId, val);
         hp = umHp;
         ataque = umAtaque;
@@ -20,6 +20,7 @@ public class CardPokemon extends Card {
         fraqueza = umaFraqueza;
         resistencia = umaResistencia;
     }
+
 
     public int getHp() {
         return hp;

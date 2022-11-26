@@ -79,8 +79,17 @@ public class Game {
 	
 
 	public void play(CardDeck deckAcionado) {
-				maoj1.getSelectedCard();	
-				maoj2.getSelectedCard();
+		boolean inicioDeJogo;
+		boolean temCartaPokemonJ1 = false;
+		/* 
+		while (temCartaPokemonJ1 == false){
+			for (int i = 0; i < maoj1.getNumberOfCards(); i++) {
+				if (maoj1.getCard(i) == null){
+					temCartaPokemonJ1 = true;
+				}
+			}
+		}
+		*/
 	}
 	
 	// Acionada pelo botao de limpar
@@ -176,10 +185,6 @@ public class Game {
 			maoj2.removeSel();
 		}
 	}
-
-
-
-	
 
 	public String getIdCarta(int NJogador){
 		if(NJogador == 1)

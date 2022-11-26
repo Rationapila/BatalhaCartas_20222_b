@@ -11,5 +11,6 @@ public enum Type {
     ACO, 
     FADA, 
     DRAGAO, 
-    INCOLOR
+    INCOLOR,
+    NORMAL
 }
