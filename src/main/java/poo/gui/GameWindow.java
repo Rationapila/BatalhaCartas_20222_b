@@ -48,7 +48,8 @@ public class GameWindow extends Application implements GameListener {
         tabPane.getTabs().add(tab2);
         tabPane.getTabs().add(tab3);
 
-
+		// MAOS E CAMPO DE JOGO
+		// --------------------------------------------------------------
 		GridPane grid1 = new GridPane();
 		grid1.setAlignment(Pos.CENTER);
 		grid1.setHgap(10);
@@ -119,7 +120,7 @@ public class GameWindow extends Application implements GameListener {
 		sdM2.setFitToHeight(true);
 		sdM2.setContent(mesaJ2);
 		grid3.add(sdM2, 0, 3);
-
+		// --------------------------------------------------------------
 		/* 
 		PlacarView placar = new PlacarView();
 		grid3.add(placar, 0, 1);
@@ -131,6 +132,8 @@ public class GameWindow extends Application implements GameListener {
 		butClean.setOnAction(e -> Game.getInstance().removeSelected());
 		*/
 
+		// BOTOES DE COMANDO
+		// --------------------------------------------------------------
 		Button bancoJ1 = new Button("Colocar na reserva");
 		grid1.add(bancoJ1, 0, 1);
 		bancoJ1.setOnAction(e -> Game.getInstance().colocaReservaJ1());
@@ -180,7 +183,7 @@ public class GameWindow extends Application implements GameListener {
 		Button butDrawP2 = new Button("Draw");
 		grid2.add(butDrawP2, 0, 4);
 		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
-		
+		// --------------------------------------------------------------
 		
 
 		tab1.setContent(grid1);

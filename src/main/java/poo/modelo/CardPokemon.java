@@ -29,8 +29,12 @@ public class CardPokemon extends Card {
         return hp;
     }
 
-    public void recebeDano(int n) {
-        hp -= n;
+    /**
+     * @param int valor a ser adicionado ou removido do hp do pokemon
+     * valores positivos para causar dano e negativos para cura
+     */
+    public void setHp(int n) {
+        hp += (n);
     }
 
     public void addAtaque(Ataque e) {
@@ -50,11 +54,15 @@ public class CardPokemon extends Card {
     }
 
     public Type getResistencia() {
-        return tipo;
+        return resistencia;
     }
 
     public int getCustoRecuo() {
         return custoRecuo;
+    }
+
+    public Estagio getCategoria() {
+        return categoria;
     }
 
 }
