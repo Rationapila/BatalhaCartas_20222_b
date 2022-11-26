@@ -25,7 +25,7 @@ public class Game {
 	private Game() {
 		ptsJ1 = 0;
 		ptsJ2 = 0;
-		maoj1 = new CardDeck(6);
+		maoj1 = BancoDeDecks.getDeck(1);
 		maoj2 = new CardDeck(6);
 		deckj1 = new CardDeck(40);
 		deckj2 = new CardDeck(40);
