@@ -91,7 +91,7 @@ public class GameWindow extends Application implements GameListener {
 		
 		DeckView zonaPrincipalJ1 = new DeckView(-3);
 		ScrollPane sdR1 = new ScrollPane();
-		sdR1.setPrefSize(800, 225);
+		sdR1.setPrefSize(800, 180);
 		sdR1.setFitToWidth(true);
 		sdR1.setFitToHeight(true);
 		sdR1.setContent(zonaPrincipalJ1);
@@ -99,7 +99,7 @@ public class GameWindow extends Application implements GameListener {
 
 		DeckView zonaPrincipalJ2 = new DeckView(-4);
 		ScrollPane sdR2 = new ScrollPane();
-		sdR2.setPrefSize(800, 225);
+		sdR2.setPrefSize(800, 180);
 		sdR2.setFitToWidth(true);
 		sdR2.setFitToHeight(true);
 		sdR2.setContent(zonaPrincipalJ2);
@@ -107,7 +107,7 @@ public class GameWindow extends Application implements GameListener {
 
 		DeckView mesaJ1 = new DeckView(-1);
 		ScrollPane sdM1 = new ScrollPane();
-		sdM1.setPrefSize(800, 225);
+		sdM1.setPrefSize(800, 180);
 		sdM1.setFitToWidth(true);
 		sdM1.setFitToHeight(true);
 		sdM1.setContent(mesaJ1);
@@ -115,7 +115,7 @@ public class GameWindow extends Application implements GameListener {
 
 		DeckView mesaJ2 = new DeckView(-2);
 		ScrollPane sdM2 = new ScrollPane();
-		sdM2.setPrefSize(800, 225);
+		sdM2.setPrefSize(800, 180);
 		sdM2.setFitToWidth(true);
 		sdM2.setFitToHeight(true);
 		sdM2.setContent(mesaJ2);
