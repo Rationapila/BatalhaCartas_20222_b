@@ -202,6 +202,12 @@ public class GameWindow extends Application implements GameListener {
 		if (Game.getInstance().getVez() == 2){
 			ataqueZ2.setOnAction(e -> Game.getInstance().ataqueZ2(1));
 		}
+
+		Button passavezJ1 = new Button ("Passa vez");
+		grid1.add(passavezJ1, 0, 6);
+		if (Game.getInstance().getVez() == 1){
+			passavezJ1.setOnAction(e -> Game.getInstance().nextPlayer());
+		}
 		
 
 		Game.getInstance().playComeco();
