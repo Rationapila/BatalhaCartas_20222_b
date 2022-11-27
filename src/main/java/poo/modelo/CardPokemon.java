@@ -34,6 +34,10 @@ public class CardPokemon extends Card {
         if (tipoEnergia == tipoAtaque)
         contadorEnergia++;
     }
+
+    public int getCountEnergia(){
+        return contadorEnergia;
+    }
     
     public int getHp() {
         return hp;
