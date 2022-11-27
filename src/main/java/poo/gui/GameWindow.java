@@ -139,23 +139,19 @@ public class GameWindow extends Application implements GameListener {
 		// --------------------------------------------------------------
 		Button bancoJ1 = new Button("Colocar na reserva");
 		grid1.add(bancoJ1, 0, 1);
-		if (Game.getInstance().getVez() == 1 || Game.getInstance().getComeco() == true)
 		bancoJ1.setOnAction(e -> Game.getInstance().colocaReservaJ1());
 		
 
 		Button bancoJ2 = new Button("Colocar na reserva");
 		grid2.add(bancoJ2, 0, 1);
-		if (Game.getInstance().getVez() == 2 || Game.getInstance().getComeco() == true)
 		bancoJ2.setOnAction(e -> Game.getInstance().colocaReservaJ2());
 
 		Button zonaJ1 = new Button("Zona principal");
 		grid1.add(zonaJ1, 0, 2);
-		if (Game.getInstance().getVez() == 1 || Game.getInstance().getComeco() == true)
 		zonaJ1.setOnAction(e -> Game.getInstance().colocaZonaJ1());
 
 		Button zonaJ2 = new Button("Zona principal");
 		grid2.add(zonaJ2, 0, 2);
-		if (Game.getInstance().getVez() == 2 || Game.getInstance().getComeco() == true)
 		zonaJ2.setOnAction(e -> Game.getInstance().colocaZonaJ2());
 
 		Button readJ1 = new Button("Ver carta");
@@ -164,12 +160,10 @@ public class GameWindow extends Application implements GameListener {
 
 		Button preparacaoJ1 = new Button("Preparação Concluída");
 		grid1.add( preparacaoJ1, 0, 5);
-		if (Game.getInstance().getComeco() == true)
 		preparacaoJ1.setOnAction(e -> Game.getInstance().preparacao(1));
 
 		Button preparacaoJ2 = new Button("Preparação Concluída");
 		grid2.add( preparacaoJ2, 0, 5);
-		if (Game.getInstance().getComeco() == true)
 		preparacaoJ2.setOnAction(e -> Game.getInstance().preparacao(2));
 
 		Button readJ2 = new Button("Ver carta");
@@ -194,14 +188,11 @@ public class GameWindow extends Application implements GameListener {
 
 		Button ataqueZ1 = new Button ("Ataque 1");
 		grid3.add(ataqueZ1, 1, 1);
-		if (Game.getInstance().getVez() == 1)
 		ataqueZ1.setOnAction(e -> Game.getInstance().ataqueZ1(1));
 
 		Button ataqueZ2 = new Button ("Ataque 1");
 		grid3.add(ataqueZ2, 1, 3);
-		if (Game.getInstance().getVez() == 2){
 			ataqueZ2.setOnAction(e -> Game.getInstance().ataqueZ2(1));
-		}
 
 		Button passavezJ1 = new Button ("Passa vez");
 		grid1.add(passavezJ1, 0, 6);
