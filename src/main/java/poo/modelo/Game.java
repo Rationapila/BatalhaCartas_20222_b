@@ -44,11 +44,12 @@ public class Game {
 		comecoJogo = true;
 	}
 
-	private void nextPlayer() {
+	public void nextPlayer() {
 		player++;
 		if (player == 3) {
 			player = 1;
 		}
+		play(player);
 	}
 
 	public int getVidaPj1() {
@@ -316,7 +317,7 @@ public class Game {
 				if (pokemonZ1.getTipo() == pokemonZ2.getFraqueza())
 					dano *= 2;
 				if (pokemonZ1.getTipo() == pokemonZ2.getResistencia())
-					dano /= 2;
+					dano -= 20;
 				if (dano < 0)
 					dano = 0;
 				vidaPj2 -= dano;
@@ -330,24 +331,32 @@ public class Game {
 				observer.notify(gameEvent);
 			}
 		}
-		
+		nextPlayer();
 	}
 
 	public void ataqueZ2(int NumeroAtaque){
 		GameEvent gameEvent = null;
-		if (NumeroAtaque == 1){
-			int dano = pokemonZ2.getAtaque(0).getDano();
-			if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())
-				dano *= 2;
-			if (pokemonZ2.getTipo() == pokemonZ1.getResistencia())
-				dano -= 20;
-			if (dano < 0)
-				dano = 0;
-			vidaPj1 -= dano;
+		if (zonaPrincipalJ1.getSelectedCard() != null){
+			if (NumeroAtaque == 1){
+				int dano = pokemonZ2.getAtaque(0).getDano();
+				if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())
+					dano *= 2;
+				if (pokemonZ2.getTipo() == pokemonZ1.getResistencia())
+					dano -= 20;
+				if (dano < 0)
+					dano = 0;
+				vidaPj1 -= dano;
+			}
+			if (vidaPj1 <= 0) {
+					vidaPj1 = 0;
+					zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
+					zonaPrincipalJ1.removeSel();
+			}
+			for (var observer : observers) {
+				observer.notify(gameEvent);
+			}
 		}
-		for (var observer : observers) {
-			observer.notify(gameEvent);
-		}
+		nextPlayer();
 	}
 
 	public String getIdCarta(int NJogador){
