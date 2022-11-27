@@ -42,6 +42,7 @@ public class CardPokemon extends Card {
         }
         
     }
+
     public int getHpMaximo(){
         return hpMaximo;
         //HpMaximo
@@ -51,6 +52,10 @@ public class CardPokemon extends Card {
     }
     public int getCountEnergia(){
         return contadorEnergia;
+    }
+
+    public void setEnergia(int e) {
+        contadorEnergia = e;
     }
     
     public int getHp() {
