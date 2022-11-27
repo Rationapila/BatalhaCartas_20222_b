@@ -85,4 +85,8 @@ public class CardDeck {
 		}
 		return cartas.get(index);
 	}
+
+	public int getSize() {
+		return cartas.size();
+	}
 }

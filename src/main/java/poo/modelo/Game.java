@@ -210,6 +210,13 @@ public class Game {
 		if (NumeroAtaque == 1){
 			vidaPj2 -= ((pokemonZ1.getAtaque(0).getDano()));
 		}
+		if (vidaPj2 <= 0) {
+			for (int i = 0; i < zonaPrincipalJ2.getSize(); i++) {
+				Card aux = zonaPrincipalJ2.getCard(1);
+				zonaPrincipalJ2.setSelectedCard(aux);
+				zonaPrincipalJ2.removeSel();
+			}
+		}
 		for (var observer : observers) {
 			observer.notify(gameEvent);
 		}
