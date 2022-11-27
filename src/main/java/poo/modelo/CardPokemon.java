@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class CardPokemon extends Card {
     private int hp;
+    private int hpMaximo;
     private ArrayList<Ataque> ataques;
     private int custoRecuo;
     private Type tipo;
@@ -12,11 +13,13 @@ public class CardPokemon extends Card {
     private Type fraqueza;
     private Type resistencia;
     private int contadorEnergia = 0;
+    private String idFilho;
 
     public CardPokemon(String umId, String umImageId, int umHp, int umCustoRecuo,
-    Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia, Type umTipoAtaque) {
+    Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia, Type umTipoAtaque, String umIdFilho) {
         super(umId, umImageId);
         hp = umHp;
+        hpMaximo = umHp;
         ataques = new ArrayList<Ataque>();
         custoRecuo = umCustoRecuo;
         tipo = umTipo;
@@ -24,6 +27,7 @@ public class CardPokemon extends Card {
         fraqueza = umaFraqueza;
         resistencia = umaResistencia;
         tipoAtaque = umTipoAtaque;
+        idFilho = umIdFilho;
     }
 
     public CardPokemon (String umId, String umImageId){
@@ -38,7 +42,13 @@ public class CardPokemon extends Card {
         }
         
     }
-
+    public int getHpMaximo(){
+        return hpMaximo;
+        //HpMaximo
+    }
+    public String getIdFilho(){
+        return idFilho;
+    }
     public int getCountEnergia(){
         return contadorEnergia;
     }
