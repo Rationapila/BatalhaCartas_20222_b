@@ -23,6 +23,8 @@ public class Game {
 	private CardEnergia comparadorEnergia;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
 	private int pontosJ1 = 0, pontosJ2 = 0;
+	boolean energiaDisponivelJ1;
+	boolean energiaDisponivelJ2;
 	
 	public static Game getInstance() {
 		return game;
@@ -44,6 +46,10 @@ public class Game {
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
 		comparadorEnergia = new CardEnergia("", "", null);
+		pontosJ1 = 0;
+		pontosJ2 = 0;
+		energiaDisponivelJ1 = true;
+		energiaDisponivelJ2 = true;
 		comecoJogo = true;
 	}
 
@@ -101,9 +107,11 @@ public class Game {
 	
 	public void play(int proxJogador){
 		GameEvent gameEvent = null;
+		
 		if (proxJogador == 1){
+			energiaDisponivelJ1 = true;
 			if (zonaPrincipalJ2.getCard(0) == null){
-				pontosJ2 = 6;
+				pontosJ1 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 				for (var observer : observers) {
 					observer.notify(gameEvent);
@@ -112,8 +120,9 @@ public class Game {
 		}
 
 		if (proxJogador == 2){
+			energiaDisponivelJ2 = true;
 			if (zonaPrincipalJ1.getCard(0) == null){
-				pontosJ1 = 6;
+				pontosJ2 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 				for (var observer : observers) {
 					observer.notify(gameEvent);
@@ -127,8 +136,8 @@ public class Game {
 		//Caso 2, colocar no pokemon selecionado no Banco
 		if (maoj1.getSelectedCard().getClass() == comparadorEnergia.getClass()){
 			CardEnergia c  = (CardEnergia)maoj1.getSelectedCard();
-			if (getVez() == 1){
-				if (escolha == 1){
+			if (getVez() == 1 && comecoJogo == false && energiaDisponivelJ1 == true){
+				if (escolha == 1 && comecoJogo == false){
 					pokemonZ1.addEnergia(c.getTipo());
 				}
 				if (escolha == 2){
@@ -136,6 +145,7 @@ public class Game {
 					pokemonBanco.addEnergia(c.getTipo());
 				}
 				maoj1.removeSel();
+				energiaDisponivelJ1 = false;
 			}
 		}	
 	}
@@ -145,7 +155,7 @@ public class Game {
 		//Caso 2, colocar no pokemon selecionado no Banco
 		if (maoj2.getSelectedCard().getClass() == comparadorEnergia.getClass()){
 			CardEnergia c  = (CardEnergia)maoj2.getSelectedCard();
-			if (getVez() == 2 || comecoJogo == true){
+			if (getVez() == 2 && comecoJogo == false && energiaDisponivelJ2 == true){
 				if (escolha == 1){
 					pokemonZ2.addEnergia(c.getTipo());
 				}
@@ -154,6 +164,7 @@ public class Game {
 					pokemonBanco.addEnergia(c.getTipo());
 				}
 				maoj2.removeSel();
+				energiaDisponivelJ2 = false;
 			}
 		}
 	}
