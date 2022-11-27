@@ -33,14 +33,50 @@ public class BancoDeDecks {
         //Deck jogador 1:
         //Pokemons:
         deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
 
         //Energias:
         deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+
 
 
         //Deck jogador 2:
         //Pokemons:
         deckj2.addCard(pancham);
+        
+        //Energias
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
+        deckj2.addCard(incolor);
 
 
         
