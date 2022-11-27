@@ -131,11 +131,16 @@ public class Game {
 	}
 
 	public void preparacao(int nJogador){
+		GameEvent gameEvent = null;
 		if (Game.getInstance().getComeco() == true){
 			if (nJogador == 1){
 				preparoJ1 = true;
 				if (preparoJ2 == true){
 					comecoJogo = false;
+					gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.PREPARATION, "");
+					for (var observer : observers) {
+						observer.notify(gameEvent);
+					}
 					play(1);
 				}
 			}
@@ -143,6 +148,10 @@ public class Game {
 				preparoJ2 = true;
 				if (preparoJ1 == true){
 					comecoJogo = false;
+					gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.PREPARATION, "");
+					for (var observer : observers) {
+						observer.notify(gameEvent);
+					}
 					play(1);
 				}
 			}

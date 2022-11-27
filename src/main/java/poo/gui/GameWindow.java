@@ -353,6 +353,14 @@ public class GameWindow extends Application implements GameListener {
 			alert.setHeaderText(null);
 			alert.showAndWait();
 			break;
+			case PREPARATION:
+			String textopreparação = "Fim da fase de preparações.\n Jogador 1 começa.";
+			alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Final de preparações");
+			alert.setHeaderText(null);
+			alert.setContentText(textopreparação);
+			alert.showAndWait();
+			break;
 			case REMOVESEL:
 				// Esse evento não vem para cá
 			}
