@@ -7,12 +7,14 @@ public class CardPokemon extends Card {
     private ArrayList<Ataque> ataques;
     private int custoRecuo;
     private Type tipo;
+    private Type tipoAtaque;
     private Estagio categoria;
     private Type fraqueza;
     private Type resistencia;
+    private int contadorEnergia = 0;
 
     public CardPokemon(String umId, String umImageId, int umHp, int umCustoRecuo,
-    Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia) {
+    Type umTipo, Estagio umEstagio, Type umaFraqueza, Type umaResistencia, Type tipoAtaque) {
         super(umId, umImageId);
         hp = umHp;
         ataques = new ArrayList<Ataque>();
@@ -28,7 +30,10 @@ public class CardPokemon extends Card {
         super(umId, umImageId);
     }
 
-
+    public void addEnergia(Type tipoEnergia){
+        if (tipoEnergia == tipoAtaque)
+        contadorEnergia++;
+    }
     
     public int getHp() {
         return hp;
