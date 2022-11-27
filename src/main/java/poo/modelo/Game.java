@@ -239,11 +239,11 @@ public class Game {
 		GameEvent gameEvent = null;
 		if (deckj1.getNumberOfCards() <= 0){
 			gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.NOCARDS, "");
-
 		}
-
-		Card c = deckj1.drawCard();
-		maoj1.addCard(c);
+		else{
+			Card c = deckj1.drawCard();
+			maoj1.addCard(c);
+		}
 		for (var observer : observers) {
 			observer.notify(gameEvent);
 		}
