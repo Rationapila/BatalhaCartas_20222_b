@@ -27,10 +27,10 @@ public class Game {
 	private Game() {
 		vidaPj1 = 0;
 		vidaPj2 = 0;
-		maoj1 = BancoDeDecks.getDeck(1);
-		maoj2 = BancoDeDecks.getDeck(2); 
-		deckj1 = new CardDeck(40);
-		deckj2 = new CardDeck(40);
+		deckj1 = BancoDeDecks.getDeck(1);
+		deckj2 = BancoDeDecks.getDeck(2); 
+		maoj1 = new CardDeck(0);
+		maoj2 = new CardDeck(0);
 		mesaJ1 = new CardDeck(0);
 		mesaJ2 = new CardDeck(0);
 		zonaPrincipalJ1 = new CardDeck(0);
@@ -84,15 +84,22 @@ public class Game {
 	public void play(CardDeck deckAcionado) {
 		boolean inicioDeJogo;
 		boolean temCartaPokemonJ1 = false;
-		/* 
+		
 		while (temCartaPokemonJ1 == false){
 			for (int i = 0; i < maoj1.getNumberOfCards(); i++) {
-				if (maoj1.getCard(i) == null){
+				if (maoj1.getCard(i).getClass() == comparadorPokemon.getClass()){
 					temCartaPokemonJ1 = true;
 				}
 			}
+			if (temCartaPokemonJ1 == false){
+				while (maoj1.getCard(0) != null) {
+					deckj1.addCard(maoj1.getCard(0));
+					maoj1.removeIndex(0);
+				}
+			}
+			
 		}
-		*/
+		
 	}
 	
 	// Acionada pelo botao de limpar
