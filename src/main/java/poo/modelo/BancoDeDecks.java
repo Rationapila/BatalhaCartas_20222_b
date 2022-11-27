@@ -11,7 +11,7 @@ public class BancoDeDecks {
         //Pokemons:
         Ataque drool = new Ataque (2, 30, Type.INCOLOR);
         CardPokemon licktung = new CardPokemon("1", "1", 110, 4, Type.INCOLOR,
-        Estagio.BASICO, Type.LUTADOR, null, Type.INCOLOR);
+        Estagio.BASICO, Type.LUTADOR, null, Type.INCOLOR, null);
         licktung.addAtaque(drool);
 
         //Energias:
@@ -22,7 +22,7 @@ public class BancoDeDecks {
         //Pokemons:
         Ataque punch = new Ataque(1, 10, Type.INCOLOR);
         CardPokemon pancham = new CardPokemon("2", "2", 70, 2, Type.LUTADOR, 
-        Estagio.BASICO, Type.SOMBRIO, null, Type.INCOLOR);
+        Estagio.BASICO, Type.SOMBRIO, null, Type.INCOLOR, null);
         pancham.addAtaque(punch);
 
 
