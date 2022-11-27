@@ -82,7 +82,7 @@ public class Game {
 	
 
 	public void play() {
-		boolean inicioDeJogo;
+		boolean jogoEmAdamento = true;
 		deckj1.shuffle();
 		deckj2.shuffle();
 		for (int i = 0; i < 7; i++){
@@ -91,6 +91,7 @@ public class Game {
 		}
 		garantePokemonJ1();
 		garantePokemonJ2();
+		
 	}
 
 	public void garantePokemonJ1(){
@@ -99,7 +100,10 @@ public class Game {
 			
 			for (int i = 0; i < maoj1.getNumberOfCards(); i++) {
 				if (maoj1.getCard(i).getClass() == comparadorPokemon.getClass()){
-					temCartaPokemonJ1 = true;
+					CardPokemon aCard = (CardPokemon)maoj1.getCard(i);
+					if (aCard.getCategoria() == Estagio.BASICO){
+						temCartaPokemonJ1 = true;
+					}
 				}
 			}
 			if (temCartaPokemonJ1 == false){
@@ -120,7 +124,10 @@ public class Game {
 		while (temCartaPokemonJ2 == false){
 			for (int i = 0; i < maoj2.getNumberOfCards(); i++) {
 				if (maoj2.getCard(i).getClass() == comparadorPokemon.getClass()){
-					temCartaPokemonJ2 = true;
+					CardPokemon aCard = (CardPokemon)maoj2.getCard(i);
+					if (aCard.getCategoria() == Estagio.BASICO){
+						temCartaPokemonJ2 = true;
+					}
 				}
 			}
 			if (temCartaPokemonJ2 == false){
