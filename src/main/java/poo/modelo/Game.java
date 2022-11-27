@@ -19,6 +19,7 @@ public class Game {
 	private List<GameListener> observers;
 	private CardPokemon comparadorPokemon;
 	private CardPokemon pokemonZ1, pokemonZ2;
+	private boolean comecoJogo, preparoJ1, preparoJ2;
 	
 	public static Game getInstance() {
 		return game;
@@ -39,6 +40,7 @@ public class Game {
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
+		comecoJogo = false;
 	}
 
 	private void nextPlayer() {
@@ -81,8 +83,7 @@ public class Game {
 	}
 	
 
-	public void play() {
-		boolean jogoEmAdamento = true;
+	public void playComeco() {
 		deckj1.shuffle();
 		deckj2.shuffle();
 		for (int i = 0; i < 7; i++){
@@ -91,7 +92,31 @@ public class Game {
 		}
 		garantePokemonJ1();
 		garantePokemonJ2();
-		
+	}
+	
+	public void play(){
+
+	}
+
+	public Boolean getComeco(){
+		return comecoJogo;
+	}
+
+	public void preparacao(int nJogador){
+		if (nJogador == 1){
+			preparoJ1 = true;
+			if (preparoJ2 == true){
+				comecoJogo = false;
+				play();
+			}
+		}
+		if (nJogador == 2){
+			preparoJ2 = true;
+			if (preparoJ1 == true){
+				comecoJogo = false;
+				play();
+			}
+		}
 	}
 
 	public void garantePokemonJ1(){
@@ -167,7 +192,9 @@ public class Game {
 		nextPlayer();
 	}
 
-	
+	public void EncerraPreparação(int NJogador){
+		boolean comecoJogo = false;
+	}
 	public void drawCardP1(){
 		GameEvent gameEvent = null;
 		if (deckj1.getNumberOfCards() <= 0){

@@ -158,6 +158,10 @@ public class GameWindow extends Application implements GameListener {
 		grid1.add(readJ1, 0, 3);
 		readJ1.setOnAction(e -> Game.getInstance().lerCarta(1));
 
+		Button preparacaoJ1 = new Button("Preparação Concluída");
+		grid1.add( preparacaoJ1, 0, 5);
+		preparacaoJ1.setOnAction(e -> Game.getInstance().lerCarta(2));
+
 		Button readJ2 = new Button("Ver carta");
 		grid2.add(readJ2, 0, 3);
 		readJ2.setOnAction(e -> Game.getInstance().lerCarta(2));
@@ -186,7 +190,7 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(ataqueZ2, 1, 3);
 		ataqueZ2.setOnAction(e -> Game.getInstance().ataqueZ2(1));
 
-		Game.getInstance().play();
+		Game.getInstance().playComeco();
 
 		//Button VidaPokemon1 = new Button (String.valueOf(Game.getInstance().getVidaZ1()));
 		//grid3.add(VidaPokemon1, 0, 1);
