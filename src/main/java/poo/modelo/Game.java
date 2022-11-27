@@ -54,10 +54,15 @@ public class Game {
 	}
 
 	public void nextPlayer() {
+		GameEvent gameEvent = null;
 		player++;
 		if (player == 3) {
 			player = 1;
 		}
+		gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.NEXTPLAYER, "");
+				for (var observer : observers) {
+					observer.notify(gameEvent);
+				}
 		play(player);
 	}
 
@@ -107,7 +112,7 @@ public class Game {
 	
 	public void play(int proxJogador){
 		GameEvent gameEvent = null;
-		
+
 		if (proxJogador == 1){
 			energiaDisponivelJ1 = true;
 			if (zonaPrincipalJ2.getCard(0) == null){

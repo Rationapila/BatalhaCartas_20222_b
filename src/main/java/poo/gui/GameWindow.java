@@ -377,6 +377,14 @@ public class GameWindow extends Application implements GameListener {
 			alert.setContentText(textopreparação);
 			alert.showAndWait();
 			break;
+			case NEXTPLAYER:
+			String textonextplayer = "Turno encerrado, vez do jogador " + Game.getInstance().getVez();
+			alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Próximo turno");
+			alert.setHeaderText(null);
+			alert.setContentText(textonextplayer);
+			alert.showAndWait();
+			break;
 			case REMOVESEL:
 				// Esse evento não vem para cá
 			}
