@@ -119,6 +119,19 @@ public class Game {
 		}
 	}
 
+	public void colocaZonaReservaJ1(){
+		if (getVez() == 1 && zonaPrincipalJ1.getNumberOfCards() < 1){
+			zonaPrincipalJ1.addCard(mesaJ1.getSelectedCard());
+			mesaJ1.removeSel();
+		}
+	}
+
+	public void colocaZonaReservaJ2(){
+		if (getVez() == 2 && zonaPrincipalJ2.getNumberOfCards() < 1){
+			zonaPrincipalJ2.addCard(mesaJ2.getSelectedCard());
+			mesaJ2.removeSel();
+		}
+	}
 	public int getPontosJ1(){
 		return pontosJ1;
 	}

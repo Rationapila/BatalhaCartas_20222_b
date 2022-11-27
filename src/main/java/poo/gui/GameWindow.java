@@ -194,12 +194,16 @@ public class GameWindow extends Application implements GameListener {
 		grid3.add(ataqueZ2, 1, 3);
 			ataqueZ2.setOnAction(e -> Game.getInstance().ataqueZ2(1));
 
+		/* 
 		Button passavezJ1 = new Button ("Passa vez");
 		grid1.add(passavezJ1, 0, 6);
 		if (Game.getInstance().getVez() == 1){
 			passavezJ1.setOnAction(e -> Game.getInstance().nextPlayer());
 		}
-		
+		*/
+		Button colocaZonaPrincipalReservaJ1 = new Button ("Coloca na zona");
+		grid3.add(colocaZonaPrincipalReservaJ1, 2, 0);
+		colocaZonaPrincipalReservaJ1.setOnAction(e -> Game.getInstance().colocaZonaReservaJ1());
 
 		Game.getInstance().playComeco();
 

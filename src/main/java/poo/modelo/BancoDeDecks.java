@@ -46,7 +46,7 @@ public class BancoDeDecks {
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
-        
+
 
         //Energias:
         deckj1.addCard(incolor);
