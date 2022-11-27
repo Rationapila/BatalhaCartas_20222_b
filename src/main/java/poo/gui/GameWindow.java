@@ -160,7 +160,13 @@ public class GameWindow extends Application implements GameListener {
 
 		Button preparacaoJ1 = new Button("Preparação Concluída");
 		grid1.add( preparacaoJ1, 0, 5);
-		preparacaoJ1.setOnAction(e -> Game.getInstance().lerCarta(2));
+		if (Game.getInstance().getComeco() == false)
+		preparacaoJ1.setOnAction(e -> Game.getInstance().preparacao(1));
+
+		Button preparacaoJ2 = new Button("Preparação Concluída");
+		grid2.add( preparacaoJ2, 0, 5);
+		if (Game.getInstance().getComeco() == false)
+		preparacaoJ2.setOnAction(e -> Game.getInstance().preparacao(2));
 
 		Button readJ2 = new Button("Ver carta");
 		grid2.add(readJ2, 0, 3);

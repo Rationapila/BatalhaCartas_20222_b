@@ -93,6 +93,5 @@ public class DeckView extends HBox implements CardViewListener, GameListener {
 		CardView cv = event.getCardView();
 		selectedCard = cv.getCard();
 		cDeck.setSelectedCard(selectedCard);
-		Game.getInstance().playComeco();
 	}
 }
