@@ -20,6 +20,7 @@ public class Game {
 	private CardPokemon comparadorPokemon;
 	private CardPokemon pokemonZ1, pokemonZ2;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
+	private int pontosJ1 = 0, pontosJ2 = 0;
 	
 	public static Game getInstance() {
 		return game;
@@ -40,7 +41,7 @@ public class Game {
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
-		comecoJogo = false;
+		comecoJogo = true;
 	}
 
 	private void nextPlayer() {
@@ -94,10 +95,36 @@ public class Game {
 		garantePokemonJ2();
 	}
 	
-	public void play(){
+	public void play(int proxJogador){
+		GameEvent gameEvent = null;
+		if (proxJogador == 1){
+			if (zonaPrincipalJ1.getCard(0) == null){
+				pontosJ2 = 6;
+				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
+				for (var observer : observers) {
+					observer.notify(gameEvent);
+				}
+			}
+		}
 
+		if (proxJogador == 2){
+			if (zonaPrincipalJ2.getCard(0) == null){
+				pontosJ1 = 6;
+				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
+				for (var observer : observers) {
+					observer.notify(gameEvent);
+				}
+			}
+		}
 	}
 
+	public int getPontosJ1(){
+		return pontosJ1;
+	}
+
+	public int getPontosJ2(){
+		return pontosJ2;
+	}
 	public Boolean getComeco(){
 		return comecoJogo;
 	}
@@ -107,14 +134,14 @@ public class Game {
 			preparoJ1 = true;
 			if (preparoJ2 == true){
 				comecoJogo = false;
-				play();
+				play(1);
 			}
 		}
 		if (nJogador == 2){
 			preparoJ2 = true;
 			if (preparoJ1 == true){
 				comecoJogo = false;
-				play();
+				play(1);
 			}
 		}
 	}
@@ -192,9 +219,10 @@ public class Game {
 		nextPlayer();
 	}
 
-	public void EncerraPreparação(int NJogador){
-		boolean comecoJogo = false;
+	public int getVez(){
+		return player;
 	}
+	
 	public void drawCardP1(){
 		GameEvent gameEvent = null;
 		if (deckj1.getNumberOfCards() <= 0){
