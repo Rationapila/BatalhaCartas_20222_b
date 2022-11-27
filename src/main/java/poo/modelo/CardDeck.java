@@ -51,6 +51,17 @@ public class CardDeck {
 		}
 	}
 
+	public void removeIndex(int index){
+		if (cartas.get(index) == null) {
+			return;
+		}
+		cartas.remove(cartas.get(index));
+		GameEvent gameEvent = new GameEvent(this, GameEvent.Target.DECK, GameEvent.Action.REMOVESEL, "");
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
+	}
+
 	public void addCard(Card card) {
 		System.out.println("add: "+ card);
 		cartas.add(card);
@@ -73,6 +84,15 @@ public class CardDeck {
 
 	public Card getSelectedCard() {
 		return selected;
+	}
+
+	public void clear(){
+		cartas.clear();
+		selected = null;
+		GameEvent gameEvent = new GameEvent(this, GameEvent.Target.DECK, GameEvent.Action.REMOVESEL, "");
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
 	}
 
 	public void addGameListener(GameListener listener) {
