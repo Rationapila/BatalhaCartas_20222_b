@@ -208,7 +208,14 @@ public class Game {
 	public void ataqueZ1(int NumeroAtaque){
 		GameEvent gameEvent = null;
 		if (NumeroAtaque == 1){
-			vidaPj2 -= ((pokemonZ1.getAtaque(0).getDano()));
+			int dano = pokemonZ1.getAtaque(0).getDano();
+			if (pokemonZ1.getTipo() == pokemonZ2.getFraqueza())
+				dano *= 2;
+			if (pokemonZ1.getTipo() == pokemonZ2.getResistencia())
+				dano -= 20;
+			if (dano < 0)
+				dano = 0;
+			vidaPj2 -= dano;
 		}
 		if (vidaPj2 <= 0) {
 			for (int i = 0; i < zonaPrincipalJ2.getSize(); i++) {
@@ -225,7 +232,14 @@ public class Game {
 	public void ataqueZ2(int NumeroAtaque){
 		GameEvent gameEvent = null;
 		if (NumeroAtaque == 1){
-			vidaPj1 -= ((pokemonZ2.getAtaque(0).getDano()));
+			int dano = pokemonZ2.getAtaque(0).getDano();
+			if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())
+				dano *= 2;
+			if (pokemonZ2.getTipo() == pokemonZ1.getResistencia())
+				dano -= 20;
+			if (dano < 0)
+				dano = 0;
+			vidaPj1 -= dano;
 		}
 		for (var observer : observers) {
 			observer.notify(gameEvent);
