@@ -81,11 +81,15 @@ public class Game {
 	}
 	
 
-	public void play(CardDeck deckAcionado) {
+	public void play() {
 		boolean inicioDeJogo;
 		boolean temCartaPokemonJ1 = false;
-		
+		deckj1.shuffle();
+		deckj2.shuffle();
 		while (temCartaPokemonJ1 == false){
+			for (int i = 0; i < 6; i++){
+				drawCardP1();
+			}
 			for (int i = 0; i < maoj1.getNumberOfCards(); i++) {
 				if (maoj1.getCard(i).getClass() == comparadorPokemon.getClass()){
 					temCartaPokemonJ1 = true;
@@ -96,10 +100,9 @@ public class Game {
 					deckj1.addCard(maoj1.getCard(0));
 					maoj1.removeIndex(0);
 				}
+				deckj1.shuffle();
 			}
-			
 		}
-		
 	}
 	
 	// Acionada pelo botao de limpar

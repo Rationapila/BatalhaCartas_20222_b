@@ -39,6 +39,10 @@ public class CardDeck {
 		return cartas.size();
 	}
 
+	public void shuffle(){
+		Collections.shuffle(cartas);
+	}
+
 	public void removeSel() {
 		if (selected == null) {
 			return;
