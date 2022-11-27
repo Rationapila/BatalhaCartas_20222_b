@@ -83,13 +83,20 @@ public class Game {
 
 	public void play() {
 		boolean inicioDeJogo;
-		boolean temCartaPokemonJ1 = false;
 		deckj1.shuffle();
 		deckj2.shuffle();
+		for (int i = 0; i < 7; i++){
+			drawCardP1();
+			drawCardP2();
+		}
+		garantePokemonJ1();
+		garantePokemonJ2();
+	}
+
+	public void garantePokemonJ1(){
+		boolean temCartaPokemonJ1 = false;
 		while (temCartaPokemonJ1 == false){
-			for (int i = 0; i < 6; i++){
-				drawCardP1();
-			}
+			
 			for (int i = 0; i < maoj1.getNumberOfCards(); i++) {
 				if (maoj1.getCard(i).getClass() == comparadorPokemon.getClass()){
 					temCartaPokemonJ1 = true;
@@ -101,10 +108,34 @@ public class Game {
 					maoj1.removeIndex(0);
 				}
 				deckj1.shuffle();
+				for (int i = 0; i < 7; i++){
+					drawCardP1();
+				}
 			}
 		}
 	}
-	
+
+	public void garantePokemonJ2(){
+		boolean temCartaPokemonJ2 = false;
+		while (temCartaPokemonJ2 == false){
+			for (int i = 0; i < maoj2.getNumberOfCards(); i++) {
+				if (maoj2.getCard(i).getClass() == comparadorPokemon.getClass()){
+					temCartaPokemonJ2 = true;
+				}
+			}
+			if (temCartaPokemonJ2 == false){
+				while (maoj2.getCard(0) != null) {
+					deckj2.addCard(maoj2.getCard(0));
+					maoj2.removeIndex(0);
+				}
+				deckj2.shuffle();
+				for (int i = 0; i < 7; i++){
+					drawCardP2();
+				}
+			}
+		}
+	}
+
 	// Acionada pelo botao de limpar
 	public void removeSelected() {
 		GameEvent gameEvent = null;
