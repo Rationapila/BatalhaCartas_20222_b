@@ -19,6 +19,7 @@ public class Game {
 	private List<GameListener> observers;
 	private CardPokemon comparadorPokemon;
 	private CardPokemon pokemonZ1, pokemonZ2;
+	private CardPokemon pokemonBanco;
 	private CardEnergia comparadorEnergia;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
 	private int pontosJ1 = 0, pontosJ2 = 0;
@@ -130,11 +131,33 @@ public class Game {
 				if (escolha == 1){
 					pokemonZ1.addEnergia(c.getTipo());
 				}
+				if (escolha == 2){
+					pokemonBanco = (CardPokemon)mesaJ1.getSelectedCard();
+					pokemonBanco.addEnergia(c.getTipo());
+				}
 				maoj1.removeSel();
 			}
-		}
-		
+		}	
 	}
+
+	public void usaEnergiaJ2(int escolha){
+		//Caso 1, colocar no pokemon selecionado na Zona Principal
+		//Caso 2, colocar no pokemon selecionado no Banco
+		if (maoj2.getSelectedCard().getClass() == comparadorEnergia.getClass()){
+			CardEnergia c  = (CardEnergia)maoj2.getSelectedCard();
+			if (getVez() == 2 || comecoJogo == true){
+				if (escolha == 1){
+					pokemonZ2.addEnergia(c.getTipo());
+				}
+				if (escolha == 2){
+					pokemonBanco = (CardPokemon)mesaJ2.getSelectedCard();
+					pokemonBanco.addEnergia(c.getTipo());
+				}
+				maoj2.removeSel();
+			}
+		}
+	}
+
 	public void colocaZonaReservaJ1(){
 		if (getVez() == 1 && zonaPrincipalJ1.getNumberOfCards() < 1){
 			zonaPrincipalJ1.addCard(mesaJ1.getSelectedCard());
