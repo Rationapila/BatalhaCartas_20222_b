@@ -19,6 +19,7 @@ public class Game {
 	private List<GameListener> observers;
 	private CardPokemon comparadorPokemon;
 	private CardPokemon pokemonZ1, pokemonZ2;
+	private CardEnergia comparadorEnergia;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
 	private int pontosJ1 = 0, pontosJ2 = 0;
 	
@@ -41,6 +42,7 @@ public class Game {
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
+		comparadorEnergia = new CardEnergia("", "", null);
 		comecoJogo = true;
 	}
 
@@ -119,6 +121,20 @@ public class Game {
 		}
 	}
 
+	public void usaEnergiaJ1(int escolha){
+		//Caso 1, colocar no pokemon selecionado na Zona Principal
+		//Caso 2, colocar no pokemon selecionado no Banco
+		if (maoj1.getSelectedCard().getClass() == comparadorEnergia.getClass()){
+			CardEnergia c  = (CardEnergia)maoj1.getSelectedCard();
+			if (getVez() == 1){
+				if (escolha == 1){
+					pokemonZ1.addEnergia(c.getTipo());
+				}
+				maoj1.removeSel();
+			}
+		}
+		
+	}
 	public void colocaZonaReservaJ1(){
 		if (getVez() == 1 && zonaPrincipalJ1.getNumberOfCards() < 1){
 			zonaPrincipalJ1.addCard(mesaJ1.getSelectedCard());
@@ -347,7 +363,7 @@ public class Game {
 			GameEvent gameEvent = null;
 			if (zonaPrincipalJ2.getSelectedCard() != null){
 				if (NumeroAtaque == 1){
-					if (pokemonZ1.getCountEnergia() >= pokemonZ1.getAtaque(1).getCusto()){
+					if (pokemonZ1.getCountEnergia() >= pokemonZ1.getAtaque(0).getCusto()){
 						int dano = pokemonZ1.getAtaque(0).getDano();
 						if (pokemonZ1.getTipo() == pokemonZ2.getFraqueza())
 							dano *= 2;
@@ -376,7 +392,7 @@ public class Game {
 			GameEvent gameEvent = null;
 			if (zonaPrincipalJ1.getSelectedCard() != null){
 				if (NumeroAtaque == 1){
-					if (pokemonZ2.getCountEnergia() >= pokemonZ2.getAtaque(1).getCusto()){
+					if (pokemonZ2.getCountEnergia() >= pokemonZ2.getAtaque(0).getCusto()){
 						int dano = pokemonZ2.getAtaque(0).getDano();
 						if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())
 							dano *= 2;
