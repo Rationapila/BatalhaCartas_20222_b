@@ -99,7 +99,7 @@ public class Game {
 	public void play(int proxJogador){
 		GameEvent gameEvent = null;
 		if (proxJogador == 1){
-			if (zonaPrincipalJ1.getCard(0) == null){
+			if (zonaPrincipalJ2.getCard(0) == null){
 				pontosJ2 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 				for (var observer : observers) {
@@ -109,7 +109,7 @@ public class Game {
 		}
 
 		if (proxJogador == 2){
-			if (zonaPrincipalJ2.getCard(0) == null){
+			if (zonaPrincipalJ1.getCard(0) == null){
 				pontosJ1 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 				for (var observer : observers) {

@@ -34,6 +34,19 @@ public class BancoDeDecks {
         //Pokemons:
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
+        
 
         //Energias:
         deckj1.addCard(incolor);
@@ -58,6 +71,22 @@ public class BancoDeDecks {
         //Deck jogador 2:
         //Pokemons:
         deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
+
         
         //Energias
         deckj2.addCard(incolor);
