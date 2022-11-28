@@ -18,7 +18,7 @@ public class Game {
 	private int jogadas;
 	private List<GameListener> observers;
 	private CardPokemon comparadorPokemon;
-	private CardPokemon pokemonZ1, pokemonZ2;
+	public CardPokemon pokemonZ1, pokemonZ2;
 	private CardPokemon pokemonBanco;
 	private CardEnergia comparadorEnergia;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
