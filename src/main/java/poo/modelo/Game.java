@@ -175,16 +175,30 @@ public class Game {
 	}
 
 	public void colocaZonaReservaJ1(){
+		GameEvent gameEvent = null;
 		if (getVez() == 1 && zonaPrincipalJ1.getNumberOfCards() < 1){
 			zonaPrincipalJ1.addCard(mesaJ1.getSelectedCard());
 			mesaJ1.removeSel();
+			vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
+			pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
+			pokemonZ1.setEnergia(0);
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
 		}
 	}
 
 	public void colocaZonaReservaJ2(){
+		GameEvent gameEvent = null;
 		if (getVez() == 2 && zonaPrincipalJ2.getNumberOfCards() < 1){
 			zonaPrincipalJ2.addCard(mesaJ2.getSelectedCard());
 			mesaJ2.removeSel();
+			vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
+			pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
+			pokemonZ2.setEnergia(0);
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
 		}
 	}
 	public int getPontosJ1(){
