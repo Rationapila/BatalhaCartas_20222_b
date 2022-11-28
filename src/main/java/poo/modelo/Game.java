@@ -137,6 +137,27 @@ public class Game {
 		}
 	}
 
+	public void recuo(int NJogador) {
+		GameEvent gameEvent = null;
+		if (NJogador == 1 && getVez() == 1) {
+			if (pokemonZ1.getCountEnergia() >= pokemonZ1.getCustoRecuo() && zonaPrincipalJ1.getSelectedCard() != null) {
+				mesaJ1.addCard(pokemonZ1);
+				zonaPrincipalJ1.removeSel();
+				vidaPj1 = 0;
+			}
+		}
+		if (NJogador == 2 && getVez() == 2) {
+			if (pokemonZ2.getCountEnergia() >= pokemonZ2.getCustoRecuo() && zonaPrincipalJ2.getSelectedCard() != null) {
+				mesaJ2.addCard(pokemonZ2);
+				zonaPrincipalJ2.removeSel();
+				vidaPj2 = 0;
+			}
+		}
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
+	}
+
 	public void usaEnergiaJ1(int escolha) {
 		// Caso 1, colocar no pokemon selecionado na Zona Principal
 		// Caso 2, colocar no pokemon selecionado no Banco
