@@ -378,11 +378,14 @@ public class GameWindow extends Application implements GameListener {
 					break;
 				case READCARDZ1:
 					alert = new Alert(AlertType.INFORMATION);
+					String textoPokemonZ1 = "Este pokemon possui " + Game.getInstance().getPokemonZ1().getCountEnergia()
+							+ " energias";
 					alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
 					String cartaIdZ1 = Game.getInstance().getIdCarta(5);
 					ImageView imageViewZ1 = ImageFactory.getInstance().createImage(cartaIdZ1);
 					imageViewZ1.setPreserveRatio(true);
 					imageViewZ1.setSmooth(false);
+					alert.setContentText(textoPokemonZ1);
 					alert.setGraphic(imageViewZ1);
 					alert.setTitle("Leitura de Carta");
 					alert.setHeaderText(null);
@@ -390,18 +393,22 @@ public class GameWindow extends Application implements GameListener {
 					break;
 				case READCARDZ2:
 					alert = new Alert(AlertType.INFORMATION);
+					String textoPokemonZ2 = "Este pokemon possui " + Game.getInstance().getPokemonZ2().getCountEnergia()
+							+ " energias";
 					alert.getButtonTypes().set(0, new ButtonType("OK", ButtonData.LEFT));
 					String cartaIdZ2 = Game.getInstance().getIdCarta(6);
 					ImageView imageViewZ2 = ImageFactory.getInstance().createImage(cartaIdZ2);
 					imageViewZ2.setPreserveRatio(true);
 					imageViewZ2.setSmooth(false);
+					alert.setContentText(textoPokemonZ2);
 					alert.setGraphic(imageViewZ2);
 					alert.setTitle("Leitura de Carta");
 					alert.setHeaderText(null);
 					alert.showAndWait();
 					break;
 				case PREPARATION:
-					String textopreparação = "Fim da fase de preparações.\n Jogador " +  Game.getInstance().getVez() + " começa.";
+					String textopreparação = "Fim da fase de preparações.\n Jogador " + Game.getInstance().getVez()
+							+ " começa.";
 					alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Final de preparações");
 					alert.setHeaderText(null);
