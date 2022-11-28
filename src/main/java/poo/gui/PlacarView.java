@@ -25,24 +25,13 @@ public class PlacarView extends GridPane implements GameListener {
 		ptsJ1 = new TextField();
 		ptsJ2 = new TextField();
 
-		energiaJ1 = new TextField();
-		energiaJ2 = new TextField();
-
 		ptsJ1.setText("" + Game.getInstance().getVidaPj1());
 		ptsJ2.setText("" + Game.getInstance().getVidaPj2());
-
-		energiaJ1.setText("" + Game.getInstance().pokemonZ1.getCountEnergia());
-		energiaJ2.setText("" + Game.getInstance().pokemonZ2.getCountEnergia());
 
 		this.add(new Label("Vida:"), 0, 0);
 		this.add(ptsJ1, 1, 0);
 		this.add(new Label("Vida:"), 0, 1);
 		this.add(ptsJ2, 1, 1);
-
-		this.add(new Label("Energia:"), 0, 2);
-		this.add(ptsJ1, 1, 2);
-		this.add(new Label("Energia:"), 0, 3);
-		this.add(ptsJ2, 1, 3);
 	}
 
 	@Override

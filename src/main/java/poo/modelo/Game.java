@@ -487,6 +487,18 @@ public class Game {
 						vidaPj2 -= dano;
 					}
 				}
+				if (NumeroAtaque == 2){
+					if (pokemonZ1.getCountEnergia() >= pokemonZ1.getAtaque(1).getCusto()) {
+						int dano = pokemonZ1.getAtaque(1).getDano();
+						if (pokemonZ1.getTipo() == pokemonZ2.getFraqueza())
+							dano *= 2;
+						if (pokemonZ1.getTipo() == pokemonZ2.getResistencia())
+							dano -= 20;
+						if (dano < 0)
+							dano = 0;
+						vidaPj2 -= dano;
+					}
+				}
 				if (vidaPj2 <= 0) {
 					vidaPj2 = 0;
 					zonaPrincipalJ2.setSelectedCard(zonaPrincipalJ2.getCard(0));
@@ -514,6 +526,18 @@ public class Game {
 						if (dano < 0)
 							dano = 0;
 						vidaPj1 -= dano;
+					}
+				}
+				if (NumeroAtaque == 2){
+					if (pokemonZ2.getCountEnergia() >= pokemonZ2.getAtaque(1).getCusto()) {
+						int dano = pokemonZ2.getAtaque(1).getDano();
+						if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())
+							dano *= 2;
+						if (pokemonZ2.getTipo() == pokemonZ1.getResistencia())
+							dano -= 20;
+						if (dano < 0)
+							dano = 0;
+						vidaPj2 -= dano;
 					}
 				}
 				if (vidaPj1 <= 0) {
