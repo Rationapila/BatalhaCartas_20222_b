@@ -50,16 +50,15 @@ public class Game {
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
 		comparadorEnergia = new CardEnergia("", "", null);
-		comparadorTreinador = new CardTreinador ("", "");
-		pontosJ1 = 0;
-		pontosJ2 = 0;
+		comparadorTreinador = new CardTreinador("", "");
+		pontosJ1 = 5;
+		pontosJ2 = 5;
 		energiaDisponivelJ1 = true;
 		energiaDisponivelJ2 = true;
 		treinadorDisponivelJ1 = true;
 		treinadorDisponivelJ2 = true;
 		comecoJogo = true;
 	}
-
 
 	public void nextPlayer() {
 		GameEvent gameEvent = null;
@@ -117,7 +116,7 @@ public class Game {
 		garantePokemonJ2();
 	}
 
-	public void notificar(){
+	public void notificar() {
 		GameEvent gameEvent = null;
 		for (var observer : observers) {
 			observer.notify(gameEvent);
@@ -128,7 +127,7 @@ public class Game {
 		GameEvent gameEvent = null;
 
 		if (proxJogador == 1) {
-			if (pontosJ2 >= 6){
+			if (pontosJ2 >= 6) {
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 			}
 			energiaDisponivelJ1 = true;
@@ -144,7 +143,7 @@ public class Game {
 		}
 
 		if (proxJogador == 2) {
-			if (pontosJ1 >= 6){
+			if (pontosJ1 >= 6) {
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 			}
 			energiaDisponivelJ2 = true;
@@ -160,60 +159,59 @@ public class Game {
 		}
 	}
 
-	public void professorResearchEfeito(int nJogador){
-		if (nJogador == 1){
+	public void professorResearchEfeito(int nJogador) {
+		if (nJogador == 1) {
 			maoj1.clear();
 			deckj1.shuffle();
 			for (int i = 0; i < 7; i++) {
 				drawCardP1();
 			}
 		}
-		if (nJogador == 2){
+		if (nJogador == 2) {
 			maoj2.clear();
 			deckj2.shuffle();
 			for (int i = 0; i < 7; i++) {
 				drawCardP2();
 			}
 		}
-		}
-		
+	}
 
-	public void curaP1(int valor){
-		if (vidaPj1 != 0){
+	public void curaP1(int valor) {
+		if (vidaPj1 != 0) {
 			vidaPj1 += valor;
 			if (vidaPj1 >= pokemonZ1.getHpMaximo())
 				vidaPj1 = pokemonZ1.getHpMaximo();
 		}
 	}
 
-	public void curaP2(int valor){
-		if (vidaPj2 != 0){
+	public void curaP2(int valor) {
+		if (vidaPj2 != 0) {
 			vidaPj2 += valor;
-			if (vidaPj2 >= pokemonZ2.getHpMaximo()){
+			if (vidaPj2 >= pokemonZ2.getHpMaximo()) {
 				vidaPj2 = pokemonZ2.getHpMaximo();
 			}
 		}
 	}
 
-	public void usarTreinadorJ1(){
-		if (getVez() == 1 && comecoJogo == false && treinadorDisponivelJ1 == true){
-			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()){
-				switch (maoj1.getSelectedCard().getId()){
+	public void usarTreinadorJ1() {
+		if (getVez() == 1 && comecoJogo == false && treinadorDisponivelJ1 == true) {
+			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()) {
+				switch (maoj1.getSelectedCard().getId()) {
 					case "14":
-					CardTreinador.Hop();
-					break;
+						CardTreinador.Hop();
+						break;
 					case "15":
-					CardTreinador.HyperPotion();
-					break;
+						CardTreinador.HyperPotion();
+						break;
 					case "16":
-					CardTreinador.Potion();
-					break;
+						CardTreinador.Potion();
+						break;
 					case "17":
-					CardTreinador.ProfessorResearch();
-					break;
+						CardTreinador.ProfessorResearch();
+						break;
 					case "18":
-					CardTreinador.TeamYellTowel();
-					break;
+						CardTreinador.TeamYellTowel();
+						break;
 				}
 				maoj1.removeSel();
 				treinadorDisponivelJ1 = false;
@@ -221,25 +219,25 @@ public class Game {
 		}
 	}
 
-	public void usarTreinadorJ2(){
-		if (getVez() == 2 && comecoJogo == false && treinadorDisponivelJ2 == true){
-			if (maoj2.getSelectedCard().getClass() == comparadorTreinador.getClass()){
-				switch (maoj2.getSelectedCard().getId()){
+	public void usarTreinadorJ2() {
+		if (getVez() == 2 && comecoJogo == false && treinadorDisponivelJ2 == true) {
+			if (maoj2.getSelectedCard().getClass() == comparadorTreinador.getClass()) {
+				switch (maoj2.getSelectedCard().getId()) {
 					case "14":
-					CardTreinador.Hop();
-					break;
+						CardTreinador.Hop();
+						break;
 					case "15":
-					CardTreinador.HyperPotion();
-					break;
+						CardTreinador.HyperPotion();
+						break;
 					case "16":
-					CardTreinador.Potion();
-					break;
+						CardTreinador.Potion();
+						break;
 					case "17":
-					CardTreinador.ProfessorResearch();
-					break;
+						CardTreinador.ProfessorResearch();
+						break;
 					case "18":
-					CardTreinador.TeamYellTowel();
-					break;
+						CardTreinador.TeamYellTowel();
+						break;
 				}
 				maoj2.removeSel();
 				treinadorDisponivelJ2 = false;
@@ -480,11 +478,11 @@ public class Game {
 		observers.add(listener);
 	}
 
-	public CardPokemon getPokemonZ1(){
+	public CardPokemon getPokemonZ1() {
 		return pokemonZ1;
 	}
 
-	public CardPokemon getPokemonZ2(){
+	public CardPokemon getPokemonZ2() {
 		return pokemonZ2;
 	}
 
@@ -512,7 +510,7 @@ public class Game {
 			if ((!(maoj1.getSelectedCard() instanceof CardEnergia))
 					&& (!(maoj1.getSelectedCard() instanceof CardTreinador))) {
 				if (((CardPokemon) maoj1.getSelectedCard()).getCategoria() == Estagio.BASICO
-					&& zonaPrincipalJ1.getNumberOfCards() == 0) {
+						&& zonaPrincipalJ1.getNumberOfCards() == 0) {
 					zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
 					vidaPj1 = ((CardPokemon) zonaPrincipalJ1.getCard(0)).getHp();
 					pokemonZ1 = (CardPokemon) zonaPrincipalJ1.getCard(0);
@@ -538,7 +536,7 @@ public class Game {
 					observer.notify(gameEvent);
 				}
 			}
-			}
+		}
 	}
 
 	public void colocaZonaJ2() {
@@ -546,8 +544,8 @@ public class Game {
 		if (getVez() == 2 || getComeco() == true) {
 			if ((!(maoj2.getSelectedCard() instanceof CardEnergia))
 					&& (!(maoj2.getSelectedCard() instanceof CardTreinador))) {
-				if (((CardPokemon) maoj2.getSelectedCard()).getCategoria() == Estagio.BASICO 
-					&& zonaPrincipalJ2.getNumberOfCards() == 0) {
+				if (((CardPokemon) maoj2.getSelectedCard()).getCategoria() == Estagio.BASICO
+						&& zonaPrincipalJ2.getNumberOfCards() == 0) {
 					zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
 					vidaPj2 = ((CardPokemon) zonaPrincipalJ2.getCard(0)).getHp();
 					pokemonZ2 = (CardPokemon) zonaPrincipalJ2.getCard(0);
@@ -603,7 +601,7 @@ public class Game {
 						vidaPj2 -= dano;
 					}
 				}
-				if (NumeroAtaque == 2){
+				if (NumeroAtaque == 2) {
 					if (pokemonZ1.getCountEnergia() >= pokemonZ1.getAtaque(1).getCusto()) {
 						int dano = pokemonZ1.getAtaque(1).getDano();
 						if (pokemonZ1.getTipo() == pokemonZ2.getFraqueza())
@@ -645,7 +643,7 @@ public class Game {
 						vidaPj1 -= dano;
 					}
 				}
-				if (NumeroAtaque == 2){
+				if (NumeroAtaque == 2) {
 					if (pokemonZ2.getCountEnergia() >= pokemonZ2.getAtaque(1).getCusto()) {
 						int dano = pokemonZ2.getAtaque(1).getDano();
 						if (pokemonZ2.getTipo() == pokemonZ1.getFraqueza())

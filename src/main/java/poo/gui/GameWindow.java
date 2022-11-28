@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert;
@@ -180,6 +181,11 @@ public class GameWindow extends Application implements GameListener {
 		Button readJ2 = new Button("Ver carta");
 		grid2.add(readJ2, 0, 3);
 		readJ2.setOnAction(e -> Game.getInstance().lerCarta(2));
+
+		TextField vezAtual;
+		vezAtual = new TextField();
+		vezAtual.setText("Vez atual: " + Game.getInstance().getVez());
+		grid3.add(vezAtual, 1, 2);
 
 		Button readM1 = new Button("Ver carta");
 		grid3.add(readM1, 1, 0);
