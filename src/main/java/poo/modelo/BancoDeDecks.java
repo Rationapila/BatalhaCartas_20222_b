@@ -17,7 +17,7 @@ public class BancoDeDecks {
         Ataque tongueSlap = new Ataque (2, 50, Type.INCOLOR);
         Ataque heavyImpact = new Ataque (4, 130, Type.INCOLOR);
         CardPokemon lickilicky = new CardPokemon("5", "5", 140, 4, Type.INCOLOR,
-        Estagio.BASICO, Type.LUTADOR, null, Type.INCOLOR, "1");
+        Estagio.ESTAGIO1, Type.LUTADOR, null, Type.INCOLOR, "1");
         lickilicky.addAtaque(tongueSlap);
         lickilicky.addAtaque(heavyImpact);
 
@@ -48,12 +48,6 @@ public class BancoDeDecks {
         //Deck jogador 1:
         //Pokemons:
         deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
@@ -61,7 +55,20 @@ public class BancoDeDecks {
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
-
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
+        deckj1.addCard(lickilicky);
 
         //Energias:
         deckj1.addCard(incolor);
@@ -86,13 +93,13 @@ public class BancoDeDecks {
         //Deck jogador 2:
         //Pokemons:
         deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
+        deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
