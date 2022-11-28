@@ -6,6 +6,9 @@ public class BancoDeDecks {
         CardDeck deckj1 = new CardDeck(0);
         CardDeck deckj2 = new CardDeck(0);
 
+        //Treinadores:
+        CardTreinador hop = new CardTreinador("14", "14");
+
         //Cartas do Jogador 1:
 
         //Pokemons:
@@ -106,6 +109,18 @@ public class BancoDeDecks {
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
         
 
 

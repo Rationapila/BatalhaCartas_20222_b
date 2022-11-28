@@ -26,6 +26,8 @@ public class Game {
 	private int pontosJ1, pontosJ2;
 	boolean energiaDisponivelJ1;
 	boolean energiaDisponivelJ2;
+	boolean treinadorDisponivelJ1;
+	boolean treinadorDisponivelJ2;
 
 	public static Game getInstance() {
 		return game;
@@ -47,10 +49,13 @@ public class Game {
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
 		comparadorEnergia = new CardEnergia("", "", null);
+		comparadorTreinador = new CardTreinador ("", "");
 		pontosJ1 = 0;
 		pontosJ2 = 0;
 		energiaDisponivelJ1 = true;
 		energiaDisponivelJ2 = true;
+		treinadorDisponivelJ1 = true;
+		treinadorDisponivelJ2 = true;
 		comecoJogo = true;
 	}
 
@@ -118,6 +123,7 @@ public class Game {
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 			}
 			energiaDisponivelJ1 = true;
+			treinadorDisponivelJ1 = true;
 			drawCardP1();
 			if (zonaPrincipalJ2.getCard(0) == null) {
 				pontosJ1 = 6;
@@ -133,6 +139,7 @@ public class Game {
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 			}
 			energiaDisponivelJ2 = true;
+			treinadorDisponivelJ2 = true;
 			drawCardP2();
 			if (zonaPrincipalJ1.getCard(0) == null) {
 				pontosJ2 = 6;
@@ -144,11 +151,19 @@ public class Game {
 		}
 	}
 	public void usarTreinadorJ1(){
+		System.out.println("BOTÃO FUNCIONANDO");
 		if (getVez() == 1 && comecoJogo == false){
+			System.out.println("Teste 0");
 			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()){
+				System.out.println("Teste");
 				switch (maoj1.getSelectedCard().getId()){
-					
+					case "14":
+					System.out.println("Teste 2");
+					CardTreinador.Hop();
+					break;
 				}
+				maoj1.removeSel();
+				treinadorDisponivelJ1 = false;
 			}
 		}
 	}

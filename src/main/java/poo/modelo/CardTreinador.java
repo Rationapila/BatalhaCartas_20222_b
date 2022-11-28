@@ -3,14 +3,22 @@ package poo.modelo;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 
 public class CardTreinador extends Card {
-    private String efeito;
     
-    public CardTreinador(String anId, String anImageId, String umEfeito) {
+    public CardTreinador(String anId, String anImageId) {
         super(anId, anImageId);
-        efeito = umEfeito;
     }
 
-    public String getEfeito() {
-        return efeito;
+    public static void Hop(){
+        if (Game.getInstance().getVez() == 1){
+            Game.getInstance().drawCardP1();
+            Game.getInstance().drawCardP1();
+            Game.getInstance().drawCardP1();
+        }
+        if (Game.getInstance().getVez() == 2){
+            Game.getInstance().drawCardP2();
+            Game.getInstance().drawCardP2();
+            Game.getInstance().drawCardP2();
+        }
     }
+
 }
