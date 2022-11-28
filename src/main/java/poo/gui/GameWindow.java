@@ -184,7 +184,7 @@ public class GameWindow extends Application implements GameListener {
 
 		TextField vezAtual;
 		vezAtual = new TextField();
-		vezAtual.setText("Vez atual: " + Game.getInstance().getVez());
+		vezAtual.setText("Jogador atual: " + Game.getInstance().getVez());
 		grid3.add(vezAtual, 1, 2);
 
 		Button readM1 = new Button("Ver carta");
