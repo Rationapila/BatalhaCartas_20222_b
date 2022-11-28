@@ -21,8 +21,27 @@ public class BancoDeDecks {
         lickilicky.addAtaque(tongueSlap);
         lickilicky.addAtaque(heavyImpact);
 
+        Ataque ram = new Ataque(2, 20, Type.AGUA);
+        Ataque waveSplash = new Ataque(3, 40, Type.AGUA);
+        CardPokemon dewpider = new CardPokemon("6", "6", 60, 1, Type.AGUA,
+        Estagio.BASICO, Type.GRAMA, null, Type.AGUA, null);
+        dewpider.addAtaque(waveSplash);
+        dewpider.addAtaque(ram);
+
+        Ataque aquaWave = new Ataque(3, 80, Type.AGUA);
+        CardPokemon lapras = new CardPokemon("7", "7", 60, 2, Type.AGUA,
+        Estagio.BASICO, Type.GRAMA, null, Type.AGUA, null);
+        lapras.addAtaque(aquaWave);
+
+        Ataque rollingTackle = new Ataque(3, 80, Type.INCOLOR);
+        CardPokemon snorlax = new CardPokemon("8", "8", 150, 4, Type.INCOLOR,
+        Estagio.BASICO, Type.LUTADOR, null, Type.INCOLOR, null);
+        snorlax.addAtaque(rollingTackle);
+        snorlax.addAtaque(heavyImpact);
+
         //Energias:
         CardEnergia incolor = new CardEnergia("3", "3", Type.INCOLOR);
+
 
         //Cartas do jogador 2:
 
@@ -40,8 +59,27 @@ public class BancoDeDecks {
         pangoro.addAtaque(socoDeLuz);
         pangoro.addAtaque(socoMagnum);
 
+        Ataque rollingTackle2 = new Ataque(4, 90, Type.LUTADOR);
+        Ataque mudSlap = new Ataque(2, 30, Type.LUTADOR);
+        CardPokemon hippopotas = new CardPokemon("9", "9", 100, 4, Type.LUTADOR,
+        Estagio.BASICO, Type.GRAMA, null, Type.LUTADOR, null);
+        hippopotas.addAtaque(mudSlap);
+        hippopotas.addAtaque(rollingTackle2);
 
+        Ataque landCrush = new Ataque(4, 120, Type.LUTADOR);
+        CardPokemon onix = new CardPokemon("10", "10", 120, 4, Type.LUTADOR, 
+        Estagio.BASICO, Type.GRAMA, null, Type.LUTADOR, null);
+        onix.addAtaque(landCrush);
 
+        Ataque lungeOut = new Ataque(2, 30, Type.LUTADOR);
+        Ataque seismicToss = new Ataque(3, 110, Type.LUTADOR);
+        CardPokemon throh = new CardPokemon("11", "11", 120, 3, Type.LUTADOR, 
+        Estagio.BASICO, Type.PSIQUICO, null, Type.LUTADOR, null);
+        throh.addAtaque(lungeOut);
+        throh.addAtaque(seismicToss);
+
+        //Energias:
+        
 
         //Adição de cartas:
 
