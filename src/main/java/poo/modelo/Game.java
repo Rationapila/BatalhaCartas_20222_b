@@ -115,6 +115,7 @@ public class Game {
 
 		if (proxJogador == 1){
 			energiaDisponivelJ1 = true;
+			drawCardP1();
 			if (zonaPrincipalJ2.getCard(0) == null){
 				pontosJ1 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
@@ -126,6 +127,7 @@ public class Game {
 
 		if (proxJogador == 2){
 			energiaDisponivelJ2 = true;
+			drawCardP2();
 			if (zonaPrincipalJ1.getCard(0) == null){
 				pontosJ2 = 6;
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");

@@ -223,13 +223,13 @@ public class GameWindow extends Application implements GameListener {
 		//grid3.add(VidaPokemon1, 0, 1);
 		
 
-		Button butDrawP1 = new Button("Draw");
-		grid1.add(butDrawP1, 0, 4);
-		butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
+		//Button butDrawP1 = new Button("Draw");
+		//grid1.add(butDrawP1, 0, 4);
+		//butDrawP1.setOnAction(e -> Game.getInstance().drawCardP1());
 
-		Button butDrawP2 = new Button("Draw");
-		grid2.add(butDrawP2, 0, 4);
-		butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
+		//Button butDrawP2 = new Button("Draw");
+		//grid2.add(butDrawP2, 0, 4);
+		//butDrawP2.setOnAction(e -> Game.getInstance().drawCardP2());
 		// --------------------------------------------------------------
 		
 
