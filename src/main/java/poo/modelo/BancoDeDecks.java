@@ -9,6 +9,9 @@ public class BancoDeDecks {
         //Treinadores:
         CardTreinador hop = new CardTreinador("14", "14");
         CardTreinador hyperPotion = new CardTreinador("15", "15");
+        CardTreinador potion = new CardTreinador("16", "16");
+        CardTreinador professorResearch = new CardTreinador("17", "17");
+        CardTreinador teamYellTowel = new CardTreinador("18", "18");
 
         //Cartas do Jogador 1:
 
@@ -110,26 +113,29 @@ public class BancoDeDecks {
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
-        deckj1.addCard(hyperPotion);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
 
 
         //Energias:

@@ -159,17 +159,38 @@ public class Game {
 		}
 	}
 
+	public void professorResearchEfeito(int nJogador){
+		if (nJogador == 1){
+			maoj1.clear();
+			deckj1.shuffle();
+			for (int i = 0; i < 7; i++) {
+				drawCardP1();
+			}
+		}
+		if (nJogador == 2){
+			maoj2.clear();
+			deckj2.shuffle();
+			for (int i = 0; i < 7; i++) {
+				drawCardP2();
+			}
+		}
+		}
+		
+
 	public void curaP1(int valor){
-		vidaPj1 += valor;
-		if (vidaPj1 >= pokemonZ1.getHpMaximo()){
-			vidaPj1 = pokemonZ1.getHpMaximo();
+		if (vidaPj1 != 0){
+			vidaPj1 += valor;
+			if (vidaPj1 >= pokemonZ1.getHpMaximo())
+				vidaPj1 = pokemonZ1.getHpMaximo();
 		}
 	}
 
 	public void curaP2(int valor){
-		vidaPj2 += valor;
-		if (vidaPj2 >= pokemonZ2.getHpMaximo()){
-			vidaPj2 = pokemonZ2.getHpMaximo();
+		if (vidaPj2 != 0){
+			vidaPj2 += valor;
+			if (vidaPj2 >= pokemonZ2.getHpMaximo()){
+				vidaPj2 = pokemonZ2.getHpMaximo();
+			}
 		}
 	}
 
@@ -181,8 +202,16 @@ public class Game {
 					CardTreinador.Hop();
 					break;
 					case "15":
-					System.out.println("Teste 1");
 					CardTreinador.HyperPotion();
+					break;
+					case "16":
+					CardTreinador.Potion();
+					break;
+					case "17":
+					CardTreinador.ProfessorResearch();
+					break;
+					case "18":
+					CardTreinador.TeamYellTowel();
 					break;
 				}
 				maoj1.removeSel();

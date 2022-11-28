@@ -36,4 +36,29 @@ public class CardTreinador extends Card {
         }
         Game.getInstance().notificar();
     }
+
+    public static void Potion(){
+        if (Game.getInstance().getVez() == 1){
+                Game.getInstance().curaP1(30);
+        }
+        if (Game.getInstance().getVez() == 2){
+            Game.getInstance().curaP2(30);
+    }
+        Game.getInstance().notificar();
+    }
+
+    public static void ProfessorResearch(){
+        if (Game.getInstance().getVez() == 1){
+            Game.getInstance().professorResearchEfeito(1);
+        }
+        if (Game.getInstance().getVez() == 2){
+            Game.getInstance().professorResearchEfeito(2);
+        }
+        Game.getInstance().notificar();
+    }
+
+    public static void TeamYellTowel(){
+            Game.getInstance().curaP1(50);
+            Game.getInstance().curaP2(50);
+    }
 }

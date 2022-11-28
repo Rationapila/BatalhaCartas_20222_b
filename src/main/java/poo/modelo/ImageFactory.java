@@ -76,6 +76,12 @@ public class ImageFactory {
 			return ("/imagens/Treinadores/Hop.png");
 		case "15":
 		return ("/imagens/Treinadores/HyperPotion.png");
+		case "16":
+		return ("/imagens/Treinadores/Potion.png");
+		case "17":
+		return ("/imagens/Treinadores/ProfessorResearch.png");
+		case "18":
+		return ("/imagens/Treinadores/TeamYellTowel.png");
 		default:
 			throw new IllegalArgumentException("Invalid image Id");
 		}
