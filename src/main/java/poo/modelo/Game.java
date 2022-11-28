@@ -147,8 +147,11 @@ public class Game {
 		if (getVez() == 1 && comecoJogo == false){
 			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()){
 				switch (maoj1.getSelectedCard().getId()){
-					
+					case "14":
+					CardTreinador.Hop();
+					break;
 				}
+				maoj1.removeSel();
 			}
 		}
 	}
