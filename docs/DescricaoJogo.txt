@@ -2,33 +2,52 @@ Jogo: Batalha de Cartas
 Instruções:
 - cada jogador tem um deck, uma mão, um banco de pokemons, e um pokemon ativo
 - o deck tem 60 cartas
+- a mão de cartas tem tamanho ilimitado
 - cada jogador começa comprando 7 cartas do deck para a mão
+- caso o jogador não tenha um pokemon basico na mão inicial ele embaralha a mão no deck
+e compra outras 7 cartas
 - O jogador 1 sempre começa jogando
-- O jogador que não tiver um pokemon ativo ou no banco perde
-- o jogador que não tiver cartas no deck durante uma compra perde
+- O jogador que terminar o turno sem um pokemon ativo perde
+- O jogador que não tiver cartas no deck durante uma compra perde
+- O jogador que tiver seis de seus pokemons derrotados em combate perde
+
+Início do jogo (fase de preração):
+- cada jogador pode colocar quantos pokemons quiser na reserva
+- cada jogador pode colocar um pokemon básico na zona principal
+- não é permitido usar energias, treinadores, ou evoluir pokemon
+
+Turno:
+- O jogador pode ligar UMA energia ao seu pokemons principal
+- O jogador pode colocar quantos pokemons quiser na reserva
+- O jogador pode evoliur o seu pokemon da zona principal coolocando 
+sua evolução da para a zona principal
+- O jogador pode recuar seu pokemon ativo para o banco curando-o completamente
+mas perdendo todas suas energias, além de ser necessário pagar o custo de recuo
+- O jogador pode atacar o pokemon ativo adversário
+- O jogador pode passar o turno
+
+Ataque:
+- O jogador que está atacando deve selecionar o pokemon alvo e
+e o ataque que será usado
+- Se o pokemon ativo do atacante possuir a quantidade nessessária de 
+energias para o ataque o pokemon defensor recebera o dano aplicando as 
+fraquezas e resistências quando necessário
+- O turno do jogador atacante se encerra no fim do ataque
 
 Catas:
    	energia
 	- tipo
 	
 	treinador
-	- nome
 	- efeito
 
 	pokemon
-	- nome
 	- tipo
-	- ataque
+	- ataques
 	- vida
 	- fraqueza
 	- resistência
 	- custo de recuo
-
-Ataque:
-- nome
-- custo
-- dano 
-- efeito (ex: cura o atacante em 20)
 
 Implementacao:
 - A lógica do jogo e controlada pela classe "Game".
