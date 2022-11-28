@@ -114,6 +114,7 @@ public class Game {
 		GameEvent gameEvent = null;
 
 		if (proxJogador == 1){
+			drawCardP1();
 			energiaDisponivelJ1 = true;
 			if (zonaPrincipalJ2.getCard(0) == null){
 				pontosJ1 = 6;
@@ -125,6 +126,7 @@ public class Game {
 		}
 
 		if (proxJogador == 2){
+			drawCardP2();
 			energiaDisponivelJ2 = true;
 			if (zonaPrincipalJ1.getCard(0) == null){
 				pontosJ2 = 6;
