@@ -60,5 +60,6 @@ public class CardTreinador extends Card {
     public static void TeamYellTowel(){
             Game.getInstance().curaP1(50);
             Game.getInstance().curaP2(50);
+            Game.getInstance().notificar();
     }
 }

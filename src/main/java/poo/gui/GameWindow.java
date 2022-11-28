@@ -153,6 +153,10 @@ public class GameWindow extends Application implements GameListener {
 		grid1.add(UsarTreinadorJ1, 6, 2);
 		UsarTreinadorJ1.setOnAction(e -> Game.getInstance().usarTreinadorJ1());
 
+		Button UsarTreinadorJ2 = new Button("Usar treinador");
+		grid2.add(UsarTreinadorJ2, 6, 2);
+		UsarTreinadorJ2.setOnAction(e -> Game.getInstance().usarTreinadorJ2());
+
 		Button zonaJ1 = new Button("Zona principal");
 		grid1.add(zonaJ1, 0, 2);
 		zonaJ1.setOnAction(e -> Game.getInstance().colocaZonaJ1());
@@ -397,7 +401,7 @@ public class GameWindow extends Application implements GameListener {
 					alert.showAndWait();
 					break;
 				case PREPARATION:
-					String textopreparação = "Fim da fase de preparações.\n Jogador 1 começa.";
+					String textopreparação = "Fim da fase de preparações.\n Jogador " +  Game.getInstance().getVez() + " começa.";
 					alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Final de preparações");
 					alert.setHeaderText(null);

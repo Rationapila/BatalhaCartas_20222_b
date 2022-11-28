@@ -28,6 +28,7 @@ public class Game {
 	boolean energiaDisponivelJ2;
 	boolean treinadorDisponivelJ1;
 	boolean treinadorDisponivelJ2;
+	private Random rand = new Random();
 
 	public static Game getInstance() {
 		return game;
@@ -44,7 +45,7 @@ public class Game {
 		mesaJ2 = new CardDeck(0);
 		zonaPrincipalJ1 = new CardDeck(0);
 		zonaPrincipalJ2 = new CardDeck(0);
-		player = 1;
+		player = rand.nextInt(2) + 1;
 		jogadas = maoj1.getNumberOfCards();
 		observers = new LinkedList<>();
 		comparadorPokemon = new CardPokemon("", "");
@@ -216,6 +217,32 @@ public class Game {
 				}
 				maoj1.removeSel();
 				treinadorDisponivelJ1 = false;
+			}
+		}
+	}
+
+	public void usarTreinadorJ2(){
+		if (getVez() == 2 && comecoJogo == false && treinadorDisponivelJ2 == true){
+			if (maoj2.getSelectedCard().getClass() == comparadorTreinador.getClass()){
+				switch (maoj2.getSelectedCard().getId()){
+					case "14":
+					CardTreinador.Hop();
+					break;
+					case "15":
+					CardTreinador.HyperPotion();
+					break;
+					case "16":
+					CardTreinador.Potion();
+					break;
+					case "17":
+					CardTreinador.ProfessorResearch();
+					break;
+					case "18":
+					CardTreinador.TeamYellTowel();
+					break;
+				}
+				maoj2.removeSel();
+				treinadorDisponivelJ2 = false;
 			}
 		}
 	}
