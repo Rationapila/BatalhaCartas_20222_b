@@ -67,6 +67,10 @@ public class ImageFactory {
 		//Energia:
 		case "3":
 			return ("/imagens/Energias/Incolor.png");
+		case "12":
+			return ("/imagens/Energias/Water.png");
+		case "13":
+			return ("/imagens/Energias/Fighting.png");
 		default:
 			throw new IllegalArgumentException("Invalid image Id");
 		}

@@ -41,6 +41,7 @@ public class BancoDeDecks {
 
         //Energias:
         CardEnergia incolor = new CardEnergia("3", "3", Type.INCOLOR);
+        CardEnergia agua = new CardEnergia("12", "12", Type.AGUA);
 
 
         //Cartas do jogador 2:
@@ -79,7 +80,7 @@ public class BancoDeDecks {
         throh.addAtaque(seismicToss);
 
         //Energias:
-        
+        CardEnergia luta = new CardEnergia("13", "13", Type.LUTADOR);
 
         //Adição de cartas:
 
@@ -89,18 +90,23 @@ public class BancoDeDecks {
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
-        deckj1.addCard(licktung);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
-        deckj1.addCard(lickilicky);
-        deckj1.addCard(lickilicky);
-        deckj1.addCard(lickilicky);
-        deckj1.addCard(lickilicky);
+        deckj1.addCard(dewpider);
+        deckj1.addCard(dewpider);
+        deckj1.addCard(dewpider);
+        deckj1.addCard(dewpider);
+        deckj1.addCard(lapras);
+        deckj1.addCard(lapras);
+        deckj1.addCard(lapras);
+        deckj1.addCard(lapras);
+        deckj1.addCard(snorlax);
+        deckj1.addCard(snorlax);
+        deckj1.addCard(snorlax);
+        deckj1.addCard(snorlax);
+        
 
 
         //Energias:
@@ -115,11 +121,17 @@ public class BancoDeDecks {
         deckj1.addCard(incolor);
         deckj1.addCard(incolor);
         deckj1.addCard(incolor);
-        deckj1.addCard(incolor);
-        deckj1.addCard(incolor);
-        deckj1.addCard(incolor);
-        deckj1.addCard(incolor);
-        deckj1.addCard(incolor);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+        deckj1.addCard(agua);
+
 
 
 
@@ -129,50 +141,48 @@ public class BancoDeDecks {
         deckj2.addCard(pancham);
         deckj2.addCard(pancham);
         deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
-        deckj2.addCard(pancham);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
-        deckj2.addCard(pangoro);
+        deckj2.addCard(hippopotas);
+        deckj2.addCard(hippopotas);
+        deckj2.addCard(hippopotas);
+        deckj2.addCard(hippopotas);
+        deckj2.addCard(onix);
+        deckj2.addCard(onix);
+        deckj2.addCard(onix);
+        deckj2.addCard(onix);
+        deckj2.addCard(throh);
+        deckj2.addCard(throh);
+        deckj2.addCard(throh);
+        deckj2.addCard(throh);
 
         
         //Energias
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
-        deckj2.addCard(incolor);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        
+        
 
 
         
