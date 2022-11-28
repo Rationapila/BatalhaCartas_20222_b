@@ -105,7 +105,7 @@ public class BancoDeDecks {
         deckj1.addCard(dewpider);
         deckj1.addCard(dewpider);
         deckj1.addCard(dewpider);
-        deckj1.addCard(dewpider);
+        deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
@@ -157,7 +157,7 @@ public class BancoDeDecks {
         deckj1.addCard(professorResearch);
         deckj1.addCard(teamYellTowel);
         deckj1.addCard(teamYellTowel);
-
+        System.out.println(deckj1.getNumberOfCards());
 
 
 
@@ -167,7 +167,8 @@ public class BancoDeDecks {
         deckj2.addCard(pancham);
         deckj2.addCard(pancham);
         deckj2.addCard(pancham);
-        deckj2.addCard(pangoro);
+        deckj2.addCard(pancham);
+        deckj2.addCard(pancham);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
         deckj2.addCard(pangoro);
@@ -175,7 +176,6 @@ public class BancoDeDecks {
         deckj2.addCard(hippopotas);
         deckj2.addCard(hippopotas);
         deckj2.addCard(hippopotas);
-        deckj2.addCard(onix);
         deckj2.addCard(onix);
         deckj2.addCard(onix);
         deckj2.addCard(onix);
@@ -207,6 +207,28 @@ public class BancoDeDecks {
         deckj2.addCard(luta);
         deckj2.addCard(luta);
         deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+        deckj2.addCard(luta);
+
+        //Treinadores:
+        deckj2.addCard(hop);
+        deckj2.addCard(hop);
+        deckj2.addCard(hyperPotion);
+        deckj2.addCard(hyperPotion);
+        deckj2.addCard(potion);
+        deckj2.addCard(potion);
+        deckj2.addCard(professorResearch);
+        deckj2.addCard(professorResearch);
+        deckj2.addCard(teamYellTowel);
+        deckj2.addCard(teamYellTowel);
+        System.out.println(deckj2.getNumberOfCards());
         
         
 
