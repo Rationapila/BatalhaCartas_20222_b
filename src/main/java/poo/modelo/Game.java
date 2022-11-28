@@ -392,7 +392,7 @@ public class Game {
 				zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
 				zonaPrincipalJ1.removeSel();
 				zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
-				vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
+				vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp() - auxV;
 				pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
 				pokemonZ1.setEnergia(auxI);
 				maoj1.removeSel();
@@ -434,7 +434,7 @@ public class Game {
 				zonaPrincipalJ2.setSelectedCard(zonaPrincipalJ2.getCard(0));
 				zonaPrincipalJ2.removeSel();
 				zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
-				vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
+				vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp() - auxV;
 				pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
 				pokemonZ2.setEnergia(auxI);
 				maoj2.removeSel();
