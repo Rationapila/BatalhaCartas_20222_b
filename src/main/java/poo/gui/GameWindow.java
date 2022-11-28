@@ -147,7 +147,11 @@ public class GameWindow extends Application implements GameListener {
 
 		Button passaJ2 = new Button("Passa o turno");
 		grid2.add(passaJ2, 6, 1);
-		passaJ1.setOnAction(e -> Game.getInstance().nextPlayer());
+		passaJ2.setOnAction(e -> Game.getInstance().nextPlayer());
+
+		Button UsarTreinadorJ1 = new Button("Usar treinador");
+		grid1.add(UsarTreinadorJ1, 6, 2);
+		UsarTreinadorJ1.setOnAction(e -> Game.getInstance().usarTreinadorJ1());
 
 		Button zonaJ1 = new Button("Zona principal");
 		grid1.add(zonaJ1, 0, 2);
