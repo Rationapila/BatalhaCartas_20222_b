@@ -97,7 +97,8 @@ public class BancoDeDecks {
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
         deckj1.addCard(licktung);
-        deckj1.addCard(lickilicky);
+        deckj1.addCard(licktung);
+        deckj1.addCard(licktung);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
         deckj1.addCard(lickilicky);
@@ -105,39 +106,14 @@ public class BancoDeDecks {
         deckj1.addCard(dewpider);
         deckj1.addCard(dewpider);
         deckj1.addCard(dewpider);
-        deckj1.addCard(lapras);
-        deckj1.addCard(lapras);
-        deckj1.addCard(lapras);
-        deckj1.addCard(lapras);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
-        deckj1.addCard(professorResearch);
-        deckj1.addCard(professorResearch);
-        deckj1.addCard(professorResearch);
-        deckj1.addCard(professorResearch);
-        deckj1.addCard(professorResearch);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-        deckj1.addCard(teamYellTowel);
-
-
+        deckj1.addCard(lapras);
+        deckj1.addCard(lapras);
+        deckj1.addCard(lapras);
+        
         //Energias:
         deckj1.addCard(incolor);
         deckj1.addCard(incolor);
@@ -150,6 +126,15 @@ public class BancoDeDecks {
         deckj1.addCard(incolor);
         deckj1.addCard(incolor);
         deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
+        deckj1.addCard(incolor);
         deckj1.addCard(agua);
         deckj1.addCard(agua);
         deckj1.addCard(agua);
@@ -160,6 +145,18 @@ public class BancoDeDecks {
         deckj1.addCard(agua);
         deckj1.addCard(agua);
         deckj1.addCard(agua);
+
+        //Treinadores:
+        deckj1.addCard(hop);
+        deckj1.addCard(hop);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(potion);
+        deckj1.addCard(potion);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(professorResearch);
+        deckj1.addCard(teamYellTowel);
+        deckj1.addCard(teamYellTowel);
 
 
 
