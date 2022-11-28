@@ -6,7 +6,7 @@ Instruções:
 - cada jogador começa comprando 7 cartas do deck para a mão
 - caso o jogador não tenha um pokemon basico na mão inicial ele embaralha a mão no deck
 e compra outras 7 cartas
-- O jogador 1 sempre começa jogando
+- É aleatorizado qual dos jogadores começa jogando
 - O jogador que terminar o turno sem um pokemon ativo perde
 - O jogador que não tiver cartas no deck durante uma compra perde
 - O jogador que tiver seis de seus pokemons derrotados em combate perde
