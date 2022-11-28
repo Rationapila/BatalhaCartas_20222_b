@@ -22,7 +22,7 @@ public class Game {
 	private CardPokemon pokemonBanco;
 	private CardEnergia comparadorEnergia;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
-	private int pontosJ1 = 0, pontosJ2 = 0;
+	private int pontosJ1, pontosJ2;
 	boolean energiaDisponivelJ1;
 	boolean energiaDisponivelJ2;
 
