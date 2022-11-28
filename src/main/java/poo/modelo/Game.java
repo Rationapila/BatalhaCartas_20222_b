@@ -21,6 +21,7 @@ public class Game {
 	public CardPokemon pokemonZ1, pokemonZ2;
 	private CardPokemon pokemonBanco;
 	private CardEnergia comparadorEnergia;
+	private CardTreinador comparadorTreinador;
 	private boolean comecoJogo, preparoJ1, preparoJ2;
 	private int pontosJ1, pontosJ2;
 	boolean energiaDisponivelJ1;
@@ -113,6 +114,9 @@ public class Game {
 		GameEvent gameEvent = null;
 
 		if (proxJogador == 1) {
+			if (pontosJ2 >= 6){
+				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
+			}
 			energiaDisponivelJ1 = true;
 			drawCardP1();
 			if (zonaPrincipalJ2.getCard(0) == null) {
@@ -125,6 +129,9 @@ public class Game {
 		}
 
 		if (proxJogador == 2) {
+			if (pontosJ1 >= 6){
+				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
+			}
 			energiaDisponivelJ2 = true;
 			drawCardP2();
 			if (zonaPrincipalJ1.getCard(0) == null) {
@@ -132,6 +139,15 @@ public class Game {
 				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ENDGAME, "");
 				for (var observer : observers) {
 					observer.notify(gameEvent);
+				}
+			}
+		}
+	}
+	public void usarTreinadorJ1(){
+		if (getVez() == 1 && comecoJogo == false){
+			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()){
+				switch (maoj1.getSelectedCard().getId()){
+					
 				}
 			}
 		}
@@ -501,6 +517,7 @@ public class Game {
 					vidaPj2 = 0;
 					zonaPrincipalJ2.setSelectedCard(zonaPrincipalJ2.getCard(0));
 					zonaPrincipalJ2.removeSel();
+					pontosJ1++;
 				}
 				for (var observer : observers) {
 					observer.notify(gameEvent);
@@ -542,6 +559,7 @@ public class Game {
 					vidaPj1 = 0;
 					zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
 					zonaPrincipalJ1.removeSel();
+					pontosJ2++;
 				}
 				for (var observer : observers) {
 					observer.notify(gameEvent);
