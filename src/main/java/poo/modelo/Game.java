@@ -388,7 +388,7 @@ public class Game {
 			.equals(((CardPokemon)maoj1.getSelectedCard()).getIdFilho())) {
 
 				int auxI = pokemonZ1.getCountEnergia();
-				int auxV = pokemonZ2.getHpMaximo() - vidaPj2;
+				int auxV = pokemonZ1.getHpMaximo() - vidaPj1;
 				zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
 				zonaPrincipalJ1.removeSel();
 				zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
