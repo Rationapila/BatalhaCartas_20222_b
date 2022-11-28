@@ -48,13 +48,25 @@ public class ImageFactory {
 			return ("/imagens/Pokemons/Licktung.png");
 		case "2":
 			return ("/imagens/Pokemons/Pancham.png");
-		//Energia:
-		case "3":
-			return ("/imagens/Energias/Incolor.png");
 		case "4":
 			return ("/imagens/Pokemons/Pangoro.jpg");
 		case "5":
 			return ("/imagens/Pokemons/Lickilicky.png");
+		case "6":
+			return ("/imagens/Pokemons/Dewpider.png");
+		case "7":
+			return ("/imagens/Pokemons/Lapras.png");
+		case "8":
+			return ("/imagens/Pokemons/Snorlax.png");
+		case "9":
+			return ("/imagens/Pokemons/Hippopotas.png");
+		case "10":
+			return ("/imagens/Pokemons/Onix.png");
+		case "11":
+			return ("/imagens/Pokemons/Throh.png");
+		//Energia:
+		case "3":
+			return ("/imagens/Energias/Incolor.png");
 		default:
 			throw new IllegalArgumentException("Invalid image Id");
 		}
