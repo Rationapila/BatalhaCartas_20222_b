@@ -118,7 +118,7 @@ public class GameWindow extends Application implements GameListener {
 
 		PlacarView placar = new PlacarView();
 		grid3.add(placar, 0, 2);
-		
+
 		// --------------------------------------------------------------
 		/*
 		 * PlacarView placar = new PlacarView();
@@ -190,8 +190,12 @@ public class GameWindow extends Application implements GameListener {
 		ataqueZ2.setOnAction(e -> Game.getInstance().ataqueZ2(1));
 
 		Button ataqueZ1n2 = new Button("Ataque 2");
-		grid3.add(ataqueZ1n2, 1, 2);
+		grid3.add(ataqueZ1n2, 2, 1);
 		ataqueZ1n2.setOnAction(e -> Game.getInstance().ataqueZ1(2));
+
+		Button ataqueZ2n2 = new Button("Ataque 2");
+		grid3.add(ataqueZ2n2, 2, 3);
+		ataqueZ2n2.setOnAction(e -> Game.getInstance().ataqueZ2(2));
 
 		/*
 		 * Button passavezJ1 = new Button ("Passa vez");
