@@ -365,85 +365,74 @@ public class Game {
 
 	public void colocaZonaJ1(){
 		if (getVez() == 1 || getComeco() == true){
-			GameEvent gameEvent = null;
-			/*if (zonaPrincipalJ1.getNumberOfCards() == 1){
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-				
-			}
-			else{
-				zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
-				vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
-				pokemonZ1 = ((CardPokemon)zonaPrincipalJ1.getCard(0));
-				maoj1.removeSel();
-			}*/
-			if (zonaPrincipalJ1.getNumberOfCards() == 0) {
-				zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
-				vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
-				pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
-				pokemonZ1.setEnergia(0);
-				maoj1.removeSel();
-				
-			}
-			else if ((zonaPrincipalJ1.getCard(0).getId())
-			.equals(((CardPokemon)maoj1.getSelectedCard()).getIdFilho())) {
+			if ((!(maoj1.getSelectedCard() instanceof CardEnergia)) && (!(maoj1.getSelectedCard() instanceof CardTreinador))) {
+				GameEvent gameEvent = null;
+				if (((CardPokemon)maoj1.getSelectedCard()).getCategoria() == Estagio.BASICO) {
+					if (zonaPrincipalJ1.getNumberOfCards() == 0) {
+						zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
+						vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp();
+						pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
+						pokemonZ1.setEnergia(0);
+						maoj1.removeSel();
+						
+					}
+					else if ((zonaPrincipalJ1.getCard(0).getId())
+					.equals(((CardPokemon)maoj1.getSelectedCard()).getIdFilho())) {
 
-				int auxI = pokemonZ1.getCountEnergia();
-				int auxV = pokemonZ1.getHpMaximo() - vidaPj1;
-				zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
-				zonaPrincipalJ1.removeSel();
-				zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
-				vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp() - auxV;
-				pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
-				pokemonZ1.setEnergia(auxI);
-				maoj1.removeSel();
-			}
-			else {
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-			}
-			for (var observer : observers) {
-				observer.notify(gameEvent);
+						int auxI = pokemonZ1.getCountEnergia();
+						int auxV = pokemonZ1.getHpMaximo() - vidaPj1;
+						zonaPrincipalJ1.setSelectedCard(zonaPrincipalJ1.getCard(0));
+						zonaPrincipalJ1.removeSel();
+						zonaPrincipalJ1.addCard(maoj1.getSelectedCard());
+						vidaPj1 = ((CardPokemon)zonaPrincipalJ1.getCard(0)).getHp() - auxV;
+						pokemonZ1 = (CardPokemon)zonaPrincipalJ1.getCard(0);
+						pokemonZ1.setEnergia(auxI);
+						maoj1.removeSel();
+					}
+					else {
+						gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
+					}
+					for (var observer : observers) {
+						observer.notify(gameEvent);
+					}
+				}
 			}
 		}
 	}
 
 	public void colocaZonaJ2(){
 		if (getVez() == 2 || getComeco() == true){
-			GameEvent gameEvent = null;
-			/*if (zonaPrincipalJ2.getNumberOfCards() == 1){
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-			}
-			else{
-				zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
-				vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
-				pokemonZ2 = ((CardPokemon)zonaPrincipalJ2.getCard(0));
-				maoj2.removeSel();
-			}*/
-			if (zonaPrincipalJ2.getNumberOfCards() == 0) {
-				zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
-				vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
-				pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
-				pokemonZ2.setEnergia(0);
-				maoj2.removeSel();
-				
-			}
-			else if ((zonaPrincipalJ2.getCard(0).getId())
-			.equals(((CardPokemon)maoj2.getSelectedCard()).getIdFilho())) {
+			if ((!(maoj2.getSelectedCard() instanceof CardEnergia)) && (!(maoj2.getSelectedCard() instanceof CardTreinador))) {
+				GameEvent gameEvent = null;
+				if (((CardPokemon)maoj2.getSelectedCard()).getCategoria() == Estagio.BASICO) {
+					if (zonaPrincipalJ2.getNumberOfCards() == 0) {
+						zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
+						vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp();
+						pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
+						pokemonZ2.setEnergia(0);
+						maoj2.removeSel();
+						
+					}
+					else if ((zonaPrincipalJ2.getCard(0).getId())
+					.equals(((CardPokemon)maoj2.getSelectedCard()).getIdFilho())) {
 
-				int auxI = pokemonZ2.getCountEnergia();
-				int auxV = pokemonZ2.getHpMaximo() - vidaPj2;
-				zonaPrincipalJ2.setSelectedCard(zonaPrincipalJ2.getCard(0));
-				zonaPrincipalJ2.removeSel();
-				zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
-				vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp() - auxV;
-				pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
-				pokemonZ2.setEnergia(auxI);
-				maoj2.removeSel();
-			}
-			else {
-				gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
-			}
-			for (var observer : observers) {
-				observer.notify(gameEvent);
+						int auxI = pokemonZ2.getCountEnergia();
+						int auxV = pokemonZ2.getHpMaximo() - vidaPj2;
+						zonaPrincipalJ2.setSelectedCard(zonaPrincipalJ2.getCard(0));
+						zonaPrincipalJ2.removeSel();
+						zonaPrincipalJ2.addCard(maoj2.getSelectedCard());
+						vidaPj2 = ((CardPokemon)zonaPrincipalJ2.getCard(0)).getHp() - auxV;
+						pokemonZ2 = (CardPokemon)zonaPrincipalJ2.getCard(0);
+						pokemonZ2.setEnergia(auxI);
+						maoj2.removeSel();
+					}
+					else {
+						gameEvent = new GameEvent(this, GameEvent.Target.GWIN, GameEvent.Action.ZONETAKEN, "");
+					}
+					for (var observer : observers) {
+						observer.notify(gameEvent);
+					}
+				}
 			}
 		}
 	}
