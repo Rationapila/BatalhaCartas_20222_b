@@ -119,8 +119,6 @@ public class GameWindow extends Application implements GameListener {
 		PlacarView placar = new PlacarView();
 		grid3.add(placar, 0, 2);
 		
-		PlacarView energia = new PlacarView();
-		grid3.add(energia, 1, 2);
 		// --------------------------------------------------------------
 		/*
 		 * PlacarView placar = new PlacarView();
