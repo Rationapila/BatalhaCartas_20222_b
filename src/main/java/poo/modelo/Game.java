@@ -59,6 +59,7 @@ public class Game {
 		comecoJogo = true;
 	}
 
+
 	public void nextPlayer() {
 		GameEvent gameEvent = null;
 		player++;
@@ -115,6 +116,13 @@ public class Game {
 		garantePokemonJ2();
 	}
 
+	public void notificar(){
+		GameEvent gameEvent = null;
+		for (var observer : observers) {
+			observer.notify(gameEvent);
+		}
+	}
+
 	public void play(int proxJogador) {
 		GameEvent gameEvent = null;
 
@@ -150,16 +158,31 @@ public class Game {
 			}
 		}
 	}
+
+	public void curaP1(int valor){
+		vidaPj1 += valor;
+		if (vidaPj1 >= pokemonZ1.getHpMaximo()){
+			vidaPj1 = pokemonZ1.getHpMaximo();
+		}
+	}
+
+	public void curaP2(int valor){
+		vidaPj2 += valor;
+		if (vidaPj2 >= pokemonZ2.getHpMaximo()){
+			vidaPj2 = pokemonZ2.getHpMaximo();
+		}
+	}
+
 	public void usarTreinadorJ1(){
-		System.out.println("BOTÃO FUNCIONANDO");
-		if (getVez() == 1 && comecoJogo == false){
-			System.out.println("Teste 0");
+		if (getVez() == 1 && comecoJogo == false && treinadorDisponivelJ1 == true){
 			if (maoj1.getSelectedCard().getClass() == comparadorTreinador.getClass()){
-				System.out.println("Teste");
 				switch (maoj1.getSelectedCard().getId()){
 					case "14":
-					System.out.println("Teste 2");
 					CardTreinador.Hop();
+					break;
+					case "15":
+					System.out.println("Teste 1");
+					CardTreinador.HyperPotion();
 					break;
 				}
 				maoj1.removeSel();
@@ -401,6 +424,14 @@ public class Game {
 		observers.add(listener);
 	}
 
+	public CardPokemon getPokemonZ1(){
+		return pokemonZ1;
+	}
+
+	public CardPokemon getPokemonZ2(){
+		return pokemonZ2;
+	}
+
 	public void colocaReservaJ1() {
 		if (getVez() == 1 || getComeco() == true) {
 			if (maoj1.getSelectedCard().getClass() == comparadorPokemon.getClass()) {
@@ -567,7 +598,7 @@ public class Game {
 							dano -= 20;
 						if (dano < 0)
 							dano = 0;
-						vidaPj2 -= dano;
+						vidaPj1 -= dano;
 					}
 				}
 				if (vidaPj1 <= 0) {

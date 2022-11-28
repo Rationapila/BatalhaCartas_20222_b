@@ -54,6 +54,10 @@ public class CardPokemon extends Card {
         return contadorEnergia;
     }
 
+    public void tiraEnergia(int n){
+        contadorEnergia -= n;
+    }
+
     public void setEnergia(int e) {
         contadorEnergia = e;
     }

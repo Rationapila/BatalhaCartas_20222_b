@@ -74,6 +74,8 @@ public class ImageFactory {
 		//Treinadores:
 		case "14":
 			return ("/imagens/Treinadores/Hop.png");
+		case "15":
+		return ("/imagens/Treinadores/HyperPotion.png");
 		default:
 			throw new IllegalArgumentException("Invalid image Id");
 		}

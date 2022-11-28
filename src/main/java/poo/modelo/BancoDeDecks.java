@@ -8,6 +8,7 @@ public class BancoDeDecks {
 
         //Treinadores:
         CardTreinador hop = new CardTreinador("14", "14");
+        CardTreinador hyperPotion = new CardTreinador("15", "15");
 
         //Cartas do Jogador 1:
 
@@ -32,7 +33,7 @@ public class BancoDeDecks {
         dewpider.addAtaque(ram);
 
         Ataque aquaWave = new Ataque(3, 80, Type.AGUA);
-        CardPokemon lapras = new CardPokemon("7", "7", 60, 2, Type.AGUA,
+        CardPokemon lapras = new CardPokemon("7", "7", 120, 2, Type.AGUA,
         Estagio.BASICO, Type.GRAMA, null, Type.AGUA, null);
         lapras.addAtaque(aquaWave);
 
@@ -53,13 +54,13 @@ public class BancoDeDecks {
 
         Ataque punch = new Ataque(1, 10, Type.INCOLOR);
         CardPokemon pancham = new CardPokemon("2", "2", 70, 2, Type.LUTADOR, 
-        Estagio.BASICO, Type.SOMBRIO, null, Type.INCOLOR, null);
+        Estagio.BASICO, Type.SOMBRIO, null, Type.LUTADOR, null);
         pancham.addAtaque(punch);
 
         Ataque socoDeLuz = new Ataque(1, 40, Type.INCOLOR);
         Ataque socoMagnum = new Ataque(3, 90, Type.INCOLOR);
         CardPokemon pangoro = new CardPokemon("4", "4", 130, 2, Type.LUTADOR, Estagio.ESTAGIO1, Type.SOMBRIO, null, 
-        Type.INCOLOR, "2");
+        Type.LUTADOR, "2");
         pangoro.addAtaque(socoDeLuz);
         pangoro.addAtaque(socoMagnum);
 
@@ -109,19 +110,26 @@ public class BancoDeDecks {
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
         deckj1.addCard(snorlax);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        deckj1.addCard(hop);
-        
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
+        deckj1.addCard(hyperPotion);
 
 
         //Energias:
